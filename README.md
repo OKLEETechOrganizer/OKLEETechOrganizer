@@ -1,1 +1,4 @@
-# OKLEETechOrganizer
+# TECH INFO
+
+## AWS
+### SERVERLESS
