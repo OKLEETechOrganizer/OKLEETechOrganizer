@@ -3,6 +3,7 @@
 ## 목차
 1. [Mobile Applications](#Mobile-Applications)
 2. [Cloud Providers](#Cloud-Providers)
+3. [SERVERLESS](#SERVERLESS)
 
 ## Mobile Applications
 ### React Native
@@ -27,5 +28,18 @@
 
 ## Cloud Providers
 ### AWS
-#### SERVERLESS
-##### LAMBDA
+
+## SERVERLESS
+### AWS LAMBDA
+- Lambda는 빠르게 스케일 업해야 하고 수요가 없을 때는 0으로 스케일 다운해야 하는 애플리케이션 시나리오에 이상적인 컴퓨팅 서비스이다.
+- 함수
+  - 함수는 Lambda에서 코드를 실행하기 위해 호출할 수 있는 리소스이다.
+- 트리거
+  - 트리거는 Lambda에서 함수를 호출하는 리소스 또는 구성이다.
+- 이벤트
+  - 이벤트는 처리할 Lambda 함수에 대한 데이터가 포함된 JSON 형식 문서이다.
+- 실행환경
+  - <img alt="Execution_environment" src="img/serverless/Execution_environment.png">
+  - 함수의 런타임은 런타임 API를 사용하여 Lambda와 통신한다. 익스텐션은 익스텐션 API를 사용하여
+    Lambda와 통신한다. 또한 확장은 텔레메트리 API를 사용하여 함수의 로그 메시지와 기타 텔레메트리
+    데이터를 수신할 수 있다.
