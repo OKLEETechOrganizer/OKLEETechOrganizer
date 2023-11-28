@@ -39,9 +39,17 @@
 - 이벤트
   - 이벤트는 처리할 Lambda 함수에 대한 데이터가 포함된 JSON 형식 문서이다.
 - 실행환경
-  - <img alt="Execution_environment" src="img/serverless/Execution_environment.png">
+  <img alt="Execution_environment" src="img/serverless/Execution_environment.png">
   - 함수의 런타임은 런타임 API를 사용하여 Lambda와 통신한다. 익스텐션은 익스텐션 API를 사용하여
     Lambda와 통신한다. 또한 확장은 텔레메트리 API를 사용하여 함수의 로그 메시지와 기타 텔레메트리
     데이터를 수신할 수 있다.
-
-test3
+- Lambda 배포 패키지
+  - .zip 파일 아카이브
+    - Lambda 콘솔 사용
+      1. Lambda 콘솔에서 함수 페이지를 연다
+      2. 함수를 선택
+      3. 코드 소스 창에서 업로드 원본을 선택한 다음 .zip 파일을 선택
+      4. [업로드]를 선택하여 로컬 .zip 파일을 선택
+      5. 저장을 선택
+    - AWS CLI 사용
+    - Amazon S3 사용
