@@ -64,3 +64,31 @@
     - Docker 명령줄 인터페이스(CLI)와 같은 도구를 사용하여 코드 및 종속 항목을 컨테이너 이미지로 패키지화할 
       수 있다. 그런 다음 Amazon Elastic Container Registry(Amazon ECR)에서 호스팅되는 컨테이너 
       레지스트리에 이미지를 업로드할 수 있다.
+- 함수 호출
+  - 함수 URL 생성 및 관리
+    - 함수 URL은 Lambda 함수를 위한 전용 HTTP(S) 엔드포인트이다.
+    - 함수 URL 엔드포인트는 다음 형식을 취한다.
+      - ```https://<url-id>.lambda-url.<region>.on.aws```
+    - 함수 URL 생성(콘솔)
+      - 함수 URL을 사용하여 새 함수를 생성하려면(콘솔)
+        1. Lambda 콘솔의 함수 페이지를 연다.
+        2. 함수 생성(Create function)을 선택
+        3. 기본 정보에서 다음과 같이 한다.
+           1) 함수 이름(Function name)에 my-function과 같은 함수 이름을 입력
+           2) 런타임(Runtime)에서 원하는 언어 런타임을 선택합니다(예: Node.js 18.x).
+           3) 아키텍처(Architecture)에서 x86_64 또는 arm64를 선택
+           4) 권한(Permissions)을 확장한 다음, 새 실행 역할을 생성할지 아니면 기존 역할을 사용할지 여부를 선택
+        4. 고급 설정(Advanced settings)을 확장한 다음 함수 URL(Function URL)을 선택
+        5. 인증 유형(Auth type)에서 AWS_IAM 또는 NONE을 선택
+        6. 함수 생성(Create function)을 선택
+    - 함수 URL 생성(AWS CLI)
+      - AWS Command Line Interface(AWS CLI)를 사용하여 기존 Lambda 함수에 대한 함수 URL을 생성하려면 
+        다음 명령을 실행
+        ``` 
+           aws lambda create-function-url-config \
+             --function-name my-function \
+             --qualifier prod \ // optional
+             --auth-type AWS_IAM
+             --cors-config {AllowOrigins="https://example.com"} // optional
+        ```
+        이렇게 하면 함수 my-function에 대한 prod 한정자에 함수 URL이 추가됨
