@@ -7,6 +7,27 @@
 
 ## Mobile Applications
 ### React Native
+- Component
+  - 유저 인터페이스를 구성하는 요소
+  - 컴포넌트 생성
+    - ```
+      const App = () => { 
+        return (
+          <SafeAreaView>
+          </SafeAreaView>
+      )} 
+      ```
+    - Props(Properties)를 설정하여 컴포넌트에 전달할 수 있다.
+    - JSX 문법
+      - 태그를 열면 반드시 닫아주기 `<Text></Text>`
+      - 스스로 닫는 태그 사용하기   `<Text />`
+      - 반환할 때 반드시 하나의 태그로 감싸기
+      - JSX 안에서 자바스크립트 표현식을 보여줄 땐 중괄호 사용
+    
+- Hooks
+  - useState
+    - 상태 값을 관리하는 함수
+    - `const [visible, setVisible] = useState[true]`
 - Context API
   - 컴포넌트 사이에 공유되는 데이터를 위해 매번 공통 부모 컴포넌트를 수정하고 모든 컴포넌트에 
     Props를 전달하여 데이터를 사용하는 과정은 비효율적이다. 이처럼 비효율적인 문제를 해결하기 위해 
@@ -26,8 +47,12 @@
   - 웹에서 사용하는 windows.localStorage와 매우 유사하다.
   - AsyncStorage는 키 값 저장소로서 간단하게 앱 내에 데이터를 저장하기 위해 사용할 수 있다.
 
+<hr />
+
 ## Cloud Providers
 ### AWS
+
+<hr />
 
 ## SERVERLESS
 ### AWS LAMBDA
