@@ -1,9 +1,32 @@
 # TECH INFO
 
 ## 목차
-1. [Mobile Applications](#Mobile-Applications)
-2. [Cloud Providers](#Cloud-Providers)
-3. [SERVERLESS](#SERVERLESS)
+1. [Framework](#Framework)
+2. [Type Checkers](#Type-Checkers)
+3. [Server Side Rendering](#Server-Side-Rendering)
+4. [Mobile Applications](#Mobile-Applications)
+5. [Cloud Providers](#Cloud-Providers)
+6. [SERVERLESS](#SERVERLESS)
+
+## Framework
+### React
+
+<hr />
+
+## Type Checkers
+### TypeScript
+- arrow function의 경우 다음과 같이 타입을 지정한다.
+```
+(인수명: 인수_타입): 반환값_타입 => 자바스크립트_식
+let sayHello = (name: string): string => `Hello ${name}`
+```
+
+<hr />
+
+## Server Side Rendering
+### Next.js
+
+<hr />
 
 ## Mobile Applications
 ### React Native
