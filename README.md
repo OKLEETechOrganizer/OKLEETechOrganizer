@@ -1,12 +1,13 @@
 # TECH INFO
 
 ## 목차
-1. [Framework](#Framework)
-2. [Type Checkers](#Type-Checkers)
-3. [Server Side Rendering](#Server-Side-Rendering)
-4. [Mobile Applications](#Mobile-Applications)
-5. [Cloud Providers](#Cloud-Providers)
-6. [SERVERLESS](#SERVERLESS)
+1. [Language](#Language)
+2. [Framework](#Framework)
+3. [Type Checkers](#Type-Checkers)
+4. [Server Side Rendering](#Server-Side-Rendering)
+5. [Mobile Applications](#Mobile-Applications)
+6. [Cloud Providers](#Cloud-Providers)
+7. [SERVERLESS](#SERVERLESS)
 
 
 ## Language
