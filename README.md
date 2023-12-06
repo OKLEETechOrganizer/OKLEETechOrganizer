@@ -10,6 +10,25 @@
 
 ## Framework
 ### React
+- JSX 코드는 브라우저에서는 직접 해석할 수 없으므로, 웹팩에 의해 자바스크립트 코드로 변환된다.
+  이때, JSX로 구현된 컴포넌트는 자바스크립트의 객체로 표현된다. 변환된 자바스크립트 코드를
+  브라우저가 읽어서 실행하고 화면을 그리기 시작한다.
+- Hooks
+  - 상태 훅
+    - useState
+    - useReducer
+      - userReducer()의 반환값 배열의 첫 번째는 현재 상태, 두 번째는 dispatch 함수이다.
+        dispatch 함수에 action을 전달함으로써 상태를 업데이트할 수 있다.
+      - reducer가 현재 상태와 action을 기반으로 다음 상태를 결정한다.
+      ```
+      reducer(현재 상태, action) {
+        return 다음 상태
+      }
+      const [현재 상태, dispatch] = useReducer(reducer, reducer에 전달되는 초기 상태)
+      ```
+  - 메모이제이션 훅
+    - useCallback
+    - useMemo
 
 <hr />
 
