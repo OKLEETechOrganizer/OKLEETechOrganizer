@@ -44,6 +44,7 @@ let sayHello = (name: string): string => `Hello ${name}`
 
 ## Server Side Rendering
 ### Next.js
+- Next.js에서는 애플리케이션 안의 다른 페이지로의 이동하기 위한 Link 컴포넌트가 있다.
 
 <hr />
 
