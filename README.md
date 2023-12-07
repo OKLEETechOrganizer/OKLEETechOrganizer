@@ -189,7 +189,7 @@ let sayHello = (name: string): string => `Hello ${name}`
     - 이벤트
       - 이벤트는 처리할 Lambda 함수에 대한 데이터가 포함된 JSON 형식 문서이다.
     - 실행환경
-      <img alt="Execution_environment" src="devops/serverless/Execution_environment.png">
+      <img alt="Execution_environment" src="devops/serverless/aws_lambda/Execution_environment.png">
       - 함수의 런타임은 런타임 API를 사용하여 Lambda와 통신한다. 익스텐션은 익스텐션 API를 사용하여
         Lambda와 통신한다. 또한 확장은 텔레메트리 API를 사용하여 함수의 로그 메시지와 기타 텔레메트리
         데이터를 수신할 수 있다.
