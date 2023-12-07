@@ -1,19 +1,60 @@
 # TECH INFO
 
 ## 목차
-1. [Framework(front)](#Framework(front))
-2. [Type Checkers](#Type-Checkers)
-3. [Server Side Rendering](#Server-Side-Rendering)
-4. [Mobile Applications](#Mobile-Applications)
-5. [Language(back)](#Language(back))
-6. [Cloud Providers](#Cloud-Providers)
-7. [SERVERLESS](#SERVERLESS)
+1. [JavaScript](#JavaScript)
+2. [Framework(front)](#Framework(front))
+3. [Type Checkers](#Type-Checkers)
+4. [Server Side Rendering](#Server-Side-Rendering)
+5. [Mobile Applications](#Mobile-Applications)
+6. [Language(back)](#Language(back))
+7. [Cloud Providers](#Cloud-Providers)
+8. [SERVERLESS](#SERVERLESS)
+
+## JavaScript
+- 일반 함수과 화살표 함수에서 this의 차이
+  - 일반 함수는 자신이 종속된 객체를 this로 가리키며, 화살표 함수는 종속된 인스턴스를 가리킨다.
+  ```
+  function BlackDog() {
+    this.name = '흰둥이';
+    return {
+      name: '검둥이',
+      bark: function() {
+        console.log(this.name + ': 멍멍!');
+      }
+    }
+  }
+  
+  const blackDog = new BlackDog();
+  blackDog.bark(); // 검둥이: 멍멍!
+  
+  function WhiteDog() {
+    this.name = '흰둥이';
+    return {
+      name: '검둥이',
+      bark: () => {
+        console.log(this.name + ': 멍멍!');
+      }
+    }
+  }
+  
+  const whiteDog = new WhiteDog();
+  whiteDog.bark(); // 흰둥이: 멍멍!
+  ```
+- 화살표 함수는 따로 {}를 열어 주지 않으면 연산한 값을 그대로 반환한다는 의미이다.
+  ```
+  const triple = (value) => value * 3;
+  ```
+
+<hr />
 
 ## Framework(front)
 ### React
 - JSX 코드는 브라우저에서는 직접 해석할 수 없으므로, 웹팩에 의해 자바스크립트 코드로 변환된다.
   이때, JSX로 구현된 컴포넌트는 자바스크립트의 객체로 표현된다. 변환된 자바스크립트 코드를
   브라우저가 읽어서 실행하고 화면을 그리기 시작한다.
+- 리액트에서 DOM 요소에 스타일을 적용할 떄는 문자열 형태로 넣는 것이 아니라 객체 형태로
+  넣어 주어야 한다. 스타일 이름 중에서 background-color처럼 - 문자가 포함되는 이름이 있으면,
+  하이픈(-) 문자를 없애고 카멜 표기법으로 작성해야 한다.
 - Hooks
   - 상태 훅
     - useState
