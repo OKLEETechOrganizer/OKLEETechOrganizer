@@ -55,6 +55,9 @@
 - 리액트에서 DOM 요소에 스타일을 적용할 떄는 문자열 형태로 넣는 것이 아니라 객체 형태로
   넣어 주어야 한다. 스타일 이름 중에서 background-color처럼 - 문자가 포함되는 이름이 있으면,
   하이픈(-) 문자를 없애고 카멜 표기법으로 작성해야 한다.
+- component
+  - 라이프사이클 메서드 흐름
+    <img alt="Component_lifecycle_method_flow" src="front/framework/react/Component_lifecycle_method_flow.png">
 - Hooks
   - 상태 훅
     - useState
@@ -180,7 +183,7 @@ let sayHello = (name: string): string => `Hello ${name}`
     - 이벤트
       - 이벤트는 처리할 Lambda 함수에 대한 데이터가 포함된 JSON 형식 문서이다.
     - 실행환경
-      <img alt="Execution_environment" src="img/serverless/Execution_environment.png">
+      <img alt="Execution_environment" src="devops/serverless/Execution_environment.png">
       - 함수의 런타임은 런타임 API를 사용하여 Lambda와 통신한다. 익스텐션은 익스텐션 API를 사용하여
         Lambda와 통신한다. 또한 확장은 텔레메트리 API를 사용하여 함수의 로그 메시지와 기타 텔레메트리
         데이터를 수신할 수 있다.
