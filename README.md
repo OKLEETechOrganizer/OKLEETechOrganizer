@@ -1,16 +1,20 @@
 # TECH INFO
 
 ## 목차
-1. [JavaScript](#JavaScript)
-2. [Framework(front)](#Framework(front))
-3. [Type Checkers](#Type-Checkers)
-4. [Server Side Rendering](#Server-Side-Rendering)
-5. [Mobile Applications](#Mobile-Applications)
-6. [Language(back)](#Language(back))
-7. [Cloud Providers](#Cloud-Providers)
-8. [SERVERLESS](#SERVERLESS)
+1. [FRONT](#FRONT)
+   1. [JavaScript](#JavaScript)
+   2. [Framework](#Framework)
+   3. [Type Checkers](#Type-Checkers)
+   4. [Server Side Rendering](#Server-Side-Rendering)
+   5. [Mobile Applications](#Mobile-Applications)
+2. [BACK](#BACK)
+   1. [Language](#Language)
+3. [DEVOPS](#DEVOPS)
+   1. [Cloud Providers](#Cloud-Providers)
+   2. [SERVERLESS](#SERVERLESS)
 
-## JavaScript
+## FRONT
+### JavaScript
 - 일반 함수과 화살표 함수에서 this의 차이
   - 일반 함수는 자신이 종속된 객체를 this로 가리키며, 화살표 함수는 종속된 인스턴스를 가리킨다.
   ```
@@ -47,8 +51,8 @@
 
 <hr />
 
-## Framework(front)
-### React
+### Framework
+#### React
 - JSX 코드는 브라우저에서는 직접 해석할 수 없으므로, 웹팩에 의해 자바스크립트 코드로 변환된다.
   이때, JSX로 구현된 컴포넌트는 자바스크립트의 객체로 표현된다. 변환된 자바스크립트 코드를
   브라우저가 읽어서 실행하고 화면을 그리기 시작한다.
@@ -77,8 +81,8 @@
 
 <hr />
 
-## Type Checkers
-### TypeScript
+### Type Checkers
+#### TypeScript
 - arrow function의 경우 다음과 같이 타입을 지정한다.
 ```
 (인수명: 인수_타입): 반환값_타입 => 자바스크립트_식
@@ -87,14 +91,14 @@ let sayHello = (name: string): string => `Hello ${name}`
 
 <hr />
 
-## Server Side Rendering
-### Next.js
+### Server Side Rendering
+#### Next.js
 - Next.js에서는 애플리케이션 안의 다른 페이지로의 이동하기 위한 Link 컴포넌트가 있다.
 
 <hr />
 
-## Mobile Applications
-### React Native
+### Mobile Applications
+#### React Native
 - Component
   - 유저 인터페이스를 구성하는 요소
   - 컴포넌트 생성
@@ -137,8 +141,9 @@ let sayHello = (name: string): string => `Hello ${name}`
 
 <hr />
 
-## Language(back)
-### Java
+## BACK
+### Language
+#### Java
 - 자료구조
   - 배열과 리스트
     - 배열
@@ -166,13 +171,14 @@ let sayHello = (name: string): string => `Hello ${name}`
 
 <hr />
 
-## Cloud Providers
-### AWS
+## DEVOPS
+### Cloud Providers
+#### AWS
 
 <hr />
 
-## SERVERLESS
-### AWS LAMBDA
+### SERVERLESS
+#### AWS LAMBDA
 - Lambda기본
   - Lambda는 빠르게 스케일 업해야 하고 수요가 없을 때는 0으로 스케일 다운해야 하는 애플리케이션 시나리오에 이상적인 컴퓨팅 서비스이다.
   - 개념
