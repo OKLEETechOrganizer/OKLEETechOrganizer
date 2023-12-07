@@ -146,7 +146,7 @@ let sayHello = (name: string): string => `Hello ${name}`
 - Hooks
   - useState
     - 상태 값을 관리하는 함수
-    - `const [visible, setVisible] = useState[true]`
+    - `const [visible, setVisible] = useState(true)`
 - Context API
   - 컴포넌트 사이에 공유되는 데이터를 위해 매번 공통 부모 컴포넌트를 수정하고 모든 컴포넌트에 
     Props를 전달하여 데이터를 사용하는 과정은 비효율적이다. 이처럼 비효율적인 문제를 해결하기 위해 
@@ -201,6 +201,27 @@ let sayHello = (name: string): string => `Hello ${name}`
 ## DEVOPS
 ### Cloud Providers
 #### AWS
+- AWS ECR
+  - 도커 이미지 파일을 pull, push 할 수 있는 컨테이너 이미지 저장소이다.
+- AWS ECS
+  - 컨테이너화된 애플리케이션을 쉽게 배포, 관리, 스케일링할 수 있도록 도와주는 완전 관리형 컨테이너 오케스트레이션 서비스이다.
+  - 구성요소
+    - 용량
+      - 컨테이너가 실행되는 인프라
+      - 옵션
+        1. AWS EC2 인스턴스
+        2. AWS Fargate
+        3. 온프레미스 가상머신(VM) 또는 서버
+    - 컨트롤러
+      - 컨테이너에서 실행되는 애플리케이션을 배포하고 관리
+    - 프로비저닝
+      - 스케줄러와 함께 애플리케이션 및 컨테이너를 배포 및 관리하는 데 사용할 수 있는 도구
+      - 옵션
+        1. AWS Management Console
+        2. AWS Command Line Interface
+        3. AWS SDK
+        4. Copilot
+        5. AWS CDK
 
 <hr />
 
