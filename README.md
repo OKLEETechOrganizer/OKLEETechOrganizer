@@ -9,6 +9,8 @@
    5. [Mobile Applications](#Mobile-Applications)
 2. [BACK](#BACK)
    1. [Language](#Language)
+   2. [Framework BackEnd](#Framework-BackEnd)
+   3. [NoSQL](#NoSQL)
 3. [DEVOPS](#DEVOPS)
    1. [Cloud Providers](#Cloud-Providers)
    2. [SERVERLESS](#SERVERLESS)
@@ -170,6 +172,16 @@ let sayHello = (name: string): string => `Hello ${name}`
 
 ## BACK
 ### Language
+#### Node.js
+- node에서 mongoose를 사용할 시, 쿼리에 필터를 빈 객체인 {}로 넣으면 모든 값을 불러오게 되어서
+  문제가 되는 경우가 있다. 이 경우 에러를 내도록 하는 설정이 strictQuery 설정이다. Mongoose6에서는
+  기본값이 true이며 7에서는 false이다. 명시적으로 설정해주지 않으면 서버 기동 시 경고가 발생한다.
+```
+const mongoose = require("mongoose");
+
+mongoose.set("strictQuery", false);
+```
+
 #### Java
 - 자료구조
   - 배열과 리스트
@@ -197,6 +209,23 @@ let sayHello = (name: string): string => `Hello ${name}`
       - 우선순위 큐 (Priority Queue) : 값이 들어간 순서와 상관 없이 우선순위가 높은 데이터가 먼저 나오는 자료구조
 
 <hr />
+
+### Framework BackEnd
+#### EXPRESS
+- HTTP에서 Body를 파싱하려면 bodyParser.json() 미들웨어를 추가해야 한다.
+```
+const express = require("express");
+const bodyParser = require("body-parser");
+
+const app = express();
+app.use(bodyParser.json());
+```
+
+<hr />
+
+### NoSQL
+#### MongoDB
+
 
 ## DEVOPS
 ### Cloud Providers
