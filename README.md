@@ -9,6 +9,8 @@
    5. [Mobile Applications](#Mobile-Applications)
 2. [BACK](#BACK)
    1. [Language](#Language)
+   2. [Framework BackEnd](#Framework-BackEnd)
+   3. [NoSQL](#NoSQL)
 3. [DEVOPS](#DEVOPS)
    1. [Cloud Providers](#Cloud-Providers)
    2. [SERVERLESS](#SERVERLESS)
@@ -17,33 +19,33 @@
 ### JavaScript
 - 일반 함수과 화살표 함수에서 this의 차이
   - 일반 함수는 자신이 종속된 객체를 this로 가리키며, 화살표 함수는 종속된 인스턴스를 가리킨다.
-  ```
-  function BlackDog() {
-    this.name = '흰둥이';
-    return {
-      name: '검둥이',
-      bark: function() {
-        console.log(this.name + ': 멍멍!');
+    ```
+    function BlackDog() {
+      this.name = '흰둥이';
+      return {
+        name: '검둥이',
+        bark: function() {
+          console.log(this.name + ': 멍멍!');
+        }
       }
     }
-  }
-  
-  const blackDog = new BlackDog();
-  blackDog.bark(); // 검둥이: 멍멍!
-  
-  function WhiteDog() {
-    this.name = '흰둥이';
-    return {
-      name: '검둥이',
-      bark: () => {
-        console.log(this.name + ': 멍멍!');
+    
+    const blackDog = new BlackDog();
+    blackDog.bark(); // 검둥이: 멍멍!
+    
+    function WhiteDog() {
+      this.name = '흰둥이';
+      return {
+        name: '검둥이',
+        bark: () => {
+          console.log(this.name + ': 멍멍!');
+        }
       }
     }
-  }
-  
-  const whiteDog = new WhiteDog();
-  whiteDog.bark(); // 흰둥이: 멍멍!
-  ```
+    
+    const whiteDog = new WhiteDog();
+    whiteDog.bark(); // 흰둥이: 멍멍!
+    ```
 - 화살표 함수는 따로 {}를 열어 주지 않으면 연산한 값을 그대로 반환한다는 의미이다.
   ```
   const triple = (value) => value * 3;
@@ -111,10 +113,10 @@
 ### Type Checkers
 #### TypeScript
 - arrow function의 경우 다음과 같이 타입을 지정한다.
-```
-(인수명: 인수_타입): 반환값_타입 => 자바스크립트_식
-let sayHello = (name: string): string => `Hello ${name}`
-```
+  ```
+  (인수명: 인수_타입): 반환값_타입 => 자바스크립트_식
+  let sayHello = (name: string): string => `Hello ${name}`
+  ```
 
 <hr />
 
@@ -170,6 +172,16 @@ let sayHello = (name: string): string => `Hello ${name}`
 
 ## BACK
 ### Language
+#### Node.js
+- node에서 mongoose를 사용할 시, 쿼리에 필터를 빈 객체인 {}로 넣으면 모든 값을 불러오게 되어서
+  문제가 되는 경우가 있다. 이 경우 에러를 내도록 하는 설정이 strictQuery 설정이다. Mongoose6에서는
+  기본값이 true이며 7에서는 false이다. 명시적으로 설정해주지 않으면 서버 기동 시 경고가 발생한다.
+  ```
+  const mongoose = require("mongoose");
+  
+  mongoose.set("strictQuery", false);
+  ```
+
 #### Java
 - 자료구조
   - 배열과 리스트
@@ -197,6 +209,25 @@ let sayHello = (name: string): string => `Hello ${name}`
       - 우선순위 큐 (Priority Queue) : 값이 들어간 순서와 상관 없이 우선순위가 높은 데이터가 먼저 나오는 자료구조
 
 <hr />
+
+### Framework BackEnd
+#### EXPRESS
+- HTTP에서 Body를 파싱하려면 bodyParser.json() 미들웨어를 추가해야 한다.
+  ```
+  const express = require("express");
+  const bodyParser = require("body-parser");
+  
+  const app = express();
+  app.use(bodyParser.json());
+  ```
+- EXPRESS에서의 3계층 아키텍처
+  <img alt="Component_lifecycle_method_flow" src="back/frameworkbackend/express/three_layer_architecture.png">
+
+<hr />
+
+### NoSQL
+#### MongoDB
+
 
 ## DEVOPS
 ### Cloud Providers
