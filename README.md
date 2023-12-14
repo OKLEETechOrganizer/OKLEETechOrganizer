@@ -3,10 +3,11 @@
 ## 목차
 1. [FRONT](#FRONT)
    1. [JavaScript](#JavaScript)
-   2. [Framework](#Framework)
-   3. [Type Checkers](#Type-Checkers)
-   4. [Server Side Rendering](#Server-Side-Rendering)
-   5. [Mobile Applications](#Mobile-Applications)
+   2. [Package Manager](#Package-Manager)
+   3. [Framework](#Framework)
+   4. [Type Checkers](#Type-Checkers)
+   5. [Server Side Rendering](#Server-Side-Rendering)
+   6. [Mobile Applications](#Mobile-Applications)
 2. [BACK](#BACK)
    1. [Language](#Language)
    2. [Framework BackEnd](#Framework-BackEnd)
@@ -53,6 +54,14 @@
 - 자바스크립트에서 함수는 일급 객체다. 즉, 객체를 다루듯이 함수를 변수에 할당하거나, 함수를 다른 함수로
   전달하거나, 함수에서 함수를 반환하거나, 객체와 프로토타입에 할당하거나, 함수에 프로퍼티를 기록하거나,
   함수에 기록된 프로퍼티를 읽는 등의 작업을 할 수 있다.
+
+<hr />
+
+### Package-Manager
+#### npm
+
+#### yarn
+
 
 <hr />
 
@@ -176,6 +185,10 @@
 ## BACK
 ### Language
 #### Node.js
+- Node.js는 자바스크립트 코드 실행에 필요한 런타임으로 V8 엔진을 사용하고, 자바스크립트 런타임에
+  필요한 이벤트 루프 및 운영체제 시스템 API를 사용하는 데는 libuv 라이브러리를 사용한다.
+- Node.js의 장단점
+  <img src="back/language/nodejs/node_pros_and_cons.png">
 - node에서 mongoose를 사용할 시, 쿼리에 필터를 빈 객체인 {}로 넣으면 모든 값을 불러오게 되어서
   문제가 되는 경우가 있다. 이 경우 에러를 내도록 하는 설정이 strictQuery 설정이다. Mongoose6에서는
   기본값이 true이며 7에서는 false이다. 명시적으로 설정해주지 않으면 서버 기동 시 경고가 발생한다.
