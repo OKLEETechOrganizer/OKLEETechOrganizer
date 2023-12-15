@@ -81,7 +81,11 @@
 <hr />
 
 ### Package-Manager
+- 패키지 매니저는 프로젝트에 필요한 의존성 패키지를 관리하는 프로그램을 의미한다.
+  - 의존성 패키지는 해당 프로젝트를 실행하는 데 꼭 필요한 라이브러리와 모듈들이다.
 #### npm
+- npm은 자바스크립트용 패키지 매니저이다. 유저가 만든 패키지를 등록하는 저장소를 의미하기도 하고
+  CLI를 의미 하기도 한다. Node.js를 설치할 때 함께 설치된다.
 
 #### yarn
 
@@ -261,7 +265,9 @@
   ```
 - EXPRESS에서의 3계층 아키텍처
   <img alt="Component_lifecycle_method_flow" src="back/frameworkbackend/express/three_layer_architecture.png">
-
+- 미들웨어
+  - 익스프레스에서 미들웨어란 HTTP 요청과 응답 사이에 함수를 추가하여 새로운 기능을 추가하는 것을
+    뜻한다.
 <hr />
 
 #### NestJS
