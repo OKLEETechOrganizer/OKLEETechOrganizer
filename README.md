@@ -378,5 +378,3 @@
              --cors-config {AllowOrigins="https://example.com"} // optional
         ```
         이렇게 하면 함수 my-function에 대한 prod 한정자에 함수 URL이 추가됨
-
-test 1
