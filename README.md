@@ -16,7 +16,7 @@
    1. [Cloud Providers](#Cloud-Providers)
    2. [SERVERLESS](#SERVERLESS)
 3. [Architecture](#Architecture)
-   4. [Multi Module](#Multi Module)
+   1. [Multi Module](#Multi Module)
 
 ## FRONT
 ### JavaScript
@@ -383,8 +383,8 @@
 
 <hr />
 
-### Architecture
-## Multi Module(멀티 모듈)
+## Architecture
+### Multi Module(멀티 모듈)
 - 모듈이란 패키지의 한 단계 위의 집합체이며, 독립적으로 배포될 수 있는 코드의 단위
 - 멀티 모듈이란 상호 연결된 여러개의 모듈로 구성된 프로젝트이다.
 - 장점
