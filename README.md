@@ -54,7 +54,6 @@
 - 자바스크립트에서 함수는 일급 객체다. 즉, 객체를 다루듯이 함수를 변수에 할당하거나, 함수를 다른 함수로
   전달하거나, 함수에서 함수를 반환하거나, 객체와 프로토타입에 할당하거나, 함수에 프로퍼티를 기록하거나,
   함수에 기록된 프로퍼티를 읽는 등의 작업을 할 수 있다.
-
 - 비동기 처리
   - 자바스크립트는 런타임에서 싱글 스레드로 동작하기 때문에 비동기 처리를 위해서는 콜백(callback), 프로미스(promise), 어싱크 어웨이트(async await) 방식을 사용한다.
   - 콜백
@@ -78,6 +77,23 @@
       
       console.log(showName());
       ```
+- 전개 연산자(...문법)를 사용하여 객체나 배열 내부의 값을 복사할 때는 얕은 복사를 하게 된다. 즉, 내부의
+  값이 완전히 새로 복사되는 것이 아니라 가장 바깥쪽에 있는 값만 복사된다. 따라서 내부의 값이 객체 혹은
+  배열이라면 내부의 값 또한 따로 복사해 주어야 한다.
+  ```
+  const todos = [{id: 1, checked: true}, {id:2, checked: true}];
+  const nextTodos = [...todos];
+  
+  nextTodos[0].checked = false;
+  console.log(todos[0] === nextTodos[0]); // 아직까지는 똑같은 객체를 가리키고 있기 때문에 true
+  
+  nextTodos[0] = {
+    ...nextTodos[0],
+    checked: false
+  };
+  console.log(todos[0] === nextTodos[0]); // 새로운 객체를 할당해 주었기에 false
+  ```
+  
 <hr />
 
 ### Package-Manager
