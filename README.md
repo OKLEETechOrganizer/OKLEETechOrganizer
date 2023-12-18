@@ -286,7 +286,8 @@
 
 ### NoSQL
 #### MongoDB
-
+- 몽고디비에서 도큐먼트는 BSON이라는 데이터 포맷이다. BSON은 'Binary JSON'의 의미로 JSON을
+  바이너리 형식으로 저장하는 형태이다.
 
 <hr />
 
