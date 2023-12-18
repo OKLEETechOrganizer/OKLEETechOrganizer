@@ -93,7 +93,14 @@
   };
   console.log(todos[0] === nextTodos[0]); // 새로운 객체를 할당해 주었기에 false
   ```
-  
+- immer를 사용하면 불변성을 유지하는 작업을 매우 간단하게 처리할 수 있다.
+  ```
+  import produce from 'immer';
+  const nextState = produce(originalState, draft => {
+    // 바꾸고 싶은 값 바꾸기
+    draft.somewhere.deep.inside = 5;
+  })
+  ```
 <hr />
 
 ### Package-Manager
