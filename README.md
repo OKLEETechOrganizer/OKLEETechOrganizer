@@ -179,8 +179,12 @@
       - useReducer를 사용했을 때의 가장 큰 장점은 컴포넌트 업데이트 로직을 컴포넌트 바깥으로
         빼낼 수 있다는 점이다.
   - 메모이제이션 훅
-    - useCallback
     - useMemo
+    - useCallback
+      - useMemo는 특정 결과값을 재사용 할 떄 사용하는 반면, useCallback은 특정 함수를 새로 만들지 않고
+        재사용하고 싶을 때 사용한다.
+- context
+  - Provider를 사용할 때 value를 명시하지 않으면 오류가 발생한다.
 
 <hr />
 
