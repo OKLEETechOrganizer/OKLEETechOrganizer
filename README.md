@@ -405,6 +405,18 @@
   바이너리 형식으로 저장하는 형태이다.
 - 몽고db 장단점
   <img src="back/nosql/mongodb/mongodb_pros_and_cons.png">
+- 몽고db 구조 </br>
+  <img src="back/nosql/mongodb/mongodb_structure.png">
+  - database
+    - 데이터베이스는 컬렉션의 물리적 컨테이너 이다. 하나의 데이터베이스에는 보통 여러개의 컬렉션을 가지고 있다.
+  - Collection
+    - 컬렉션은 몽고DB의 Document의 그룹이며 RDBMS의 예를 들면 Table과 개념이 유사하다.
+  - Document
+    - Document는 하나의 키와 값의 집합으로 이루어져 있으며 동적 스키마이다.
+    - 동적 스키마는 동일한 컬렉션 내의 도큐먼트가 동일한 필드 또는 구조를 가질 필요가 없음을 의미한다.
+      또한, 동일한 필드안에 다른타입의 데이터를 보유할 수 있음을 의미한다.
+- 몽고디비와 RDBMS의 구조 비교
+  <img src="back/nosql/mongodb/mongodb_vs_rdbms.png">
 
 <hr />
 
