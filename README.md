@@ -1,6 +1,8 @@
 # TECH INFO
 
 ## 목차
+0. [CS](#CS)
+   1. [Software Engineering](#Software-Engineering)
 1. [FRONT](#FRONT)
    1. [JavaScript](#JavaScript)
    2. [Package Manager](#Package-Manager)
@@ -17,6 +19,56 @@
    2. [SERVERLESS](#SERVERLESS)
 4. [Architecture](#Architecture)
    1. [Multi Module](#Multi-Module)
+
+## CS
+### Software Engineering
+#### UML
+##### 유스케이스 다이어그램
+- 사용자(Actor)의 관점에서 시스템의 기능, 상호작용과 그들간의 관계를 표현한다.
+- 사용하는 이유
+  - 제품과 상호작용하여 얻을 수 있는 목표를 자세히 설명할 수 있다.
+  - 시스템의 요구사항을 요약하고 정의할 수 있다.
+  - 시스템 이벤트의 기본적인 흐름을 모델링할 수 있다.
+- 구성요소
+  1. 시스템(System)
+     - 개발하고자 하는 것 그 자체이며, 웹사이트가 될 수도 있고, 소프트웨어
+        컴포넌트, 애플리케이션 등 다양한 시스템이 될 수 있다.
+     - 사각형의 형태로 표시하고, 상단에 시스템의 이름을 정의한다.
+  2. 액터(Actor)
+     - 시스템 외부에서 시스템과 상호작용하여 특정한 목적을 취하는 객체를 뜻한다.
+     - 액터는 사람이 될 수도 있고, 회사, 다른 시스템, 또는 외부 장비가 될 수도 있다.
+     - 액터는 두가지 종류가 있다.
+  3. 유스케이스(Use Cases)
+     - 시스템 내에서 일련의 작업을 수행하기 위한 행위들을 나타내며, 타원형으로 표기한다.
+  4. 관계(Relationships)
+     - 선 또는 화살표로 나타내며, 이어진 2개의 액터 또는 유스케이스들이 서로 상호
+       작용함을 나타낸다
+     - 관계는 총 4가지 종류가 있다.
+       1. 연관 관계(Association)
+          - 유스케이스와 액터 사이에 상호작용이 있다는 뜻으로, 실선으로 표시한다.
+            <img src="cs/softwareEngineering/uml/usecase_association.png">
+       2. 포함 관계(Include)
+          - 포함 관계는 두 유스케이스 간의 의존성을 나타낸다.
+            <img src="cs/softwareEngineering/uml/usecase_include.png">
+       3. 확장 관계(Extend)
+          - 확장 관계는 두개의 유스케이스 간의 확장성을 나타낸다.
+          - 하나의 유스케이스가 실행될 때 포함 관계에 있는 유스케이스가 특정 상황에서만 실행된다는 뜻이다.
+            <img src="cs/softwareEngineering/uml/usecase_extend.png">
+       4. 일반화 관계(Generalization)
+          - 일반화 관계는 부모 유스케이스와 자식 유스케이스들 간의 상속관계를 나타낸다.
+            <img src="cs/softwareEngineering/uml/usecase_generalization.png">
+          - 확장 관계와의 차이점
+            - 일반화 관계에 있는 자식 유스케이스들은 부모의 속성들을 물려받기 때문에, 부모 유스케이스가
+              해당된 모든 포함, 확장 관계를 만족해야 한다.
+            - 반면에 확장 관계에 있는 유스케이스는 속성을 물려받은 것이 아니므로, 기존 유스케이스와의
+              관계를 만족하지 않아도 된다.
+- 작성 순서
+  1. 시스템 정의: 시스템 영역과 이름을 정의한다.
+  2. 액터 정의: 사용자를 정의한다. 시스템과 상호작용하는 외부 시스템을 정의한다.
+  3. 유스케이스 정의: Actor가 요구하는 서비스를 식별한다. Actor들이 시스템과 상호작용하는 행위를 식별한다.
+  4. 관계 정의: Actor와 Actor 사이의 관계를 정의한다. Actor와 유스케이스 사이의 관계를 정의한다. 유스케이스 간의 관계를 정의한다.
+  5. 유스케이스 구조화: 두 개 이상의 유스케이스의 공통된 서비스를 추출하여 일반화시킨다.
+
 
 ## FRONT
 ### JavaScript
@@ -351,6 +403,8 @@
 #### MongoDB
 - 몽고디비에서 도큐먼트는 BSON이라는 데이터 포맷이다. BSON은 'Binary JSON'의 의미로 JSON을
   바이너리 형식으로 저장하는 형태이다.
+- 몽고db 장단점
+  <img src="back/nosql/mongodb/mongodb_pros_and_cons.png">
 
 <hr />
 
