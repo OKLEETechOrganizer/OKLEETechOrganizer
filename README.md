@@ -316,10 +316,11 @@
 
 ### Server Side Rendering
 #### Next.js
-- Next.js에서는 애플리케이션 안의 다른 페이지로의 이동하기 위한 Link 컴포넌트가 있다.
 - 라우팅
   - getServerSideProps
     - next.js의 내장 함수로서, URL에서 동적으로 변수값을 가져올 수 있게 한다.
+  - 클라이언트에서의 내비게이션
+    - Next.js에서는 애플리케이션 안의 다른 페이지로의 이동하기 위한 Link 컴포넌트가 있다.
 
 <hr />
 
