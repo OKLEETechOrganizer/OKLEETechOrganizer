@@ -333,7 +333,7 @@
   - AsyncStorage는 앱 내에서 간단하게 데이터를 저장할 수 있는 저장소이다.
   - 웹에서 사용하는 windows.localStorage와 매우 유사하다.
   - AsyncStorage는 키 값 저장소로서 간단하게 앱 내에 데이터를 저장하기 위해 사용할 수 있다.
-- component
+- react native component
   - TextInput
     - 키보드 입력을 받아낼 때 사용하는 컴포넌트
     - iOS는 화면의 하단 부분이 키보드에 가려지는 반면, 안드로이드는 화면이 줄어든다.
