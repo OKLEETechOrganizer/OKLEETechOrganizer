@@ -255,6 +255,9 @@
       - 스타일을 작성할 때 `을 사용하여 만든 문자열에 스타일 정보를 넣을 수 있는데, 이 문법을 Tagged 템플릿 리터럴
         이라고 부른다. CSS Module에 사용하는 일반 템플릿 리터럴과 다른 점은 템플릿 안에 자바스크립트 객체나 함수를
         전달 할 때 온전히 추출할 수 있다는 것이다.
+- 리액트 라우터
+  - Outlet component
+    - 이 컴포넌트는 Route의 children으로 들어가는 JSX 엘리먼트를 보여준다. 
 - context
   - Provider를 사용할 때 value를 명시하지 않으면 오류가 발생한다.
 - 리덕스
@@ -313,7 +316,11 @@
 
 ### Server Side Rendering
 #### Next.js
-- Next.js에서는 애플리케이션 안의 다른 페이지로의 이동하기 위한 Link 컴포넌트가 있다.
+- 라우팅
+  - getServerSideProps
+    - next.js의 내장 함수로서, URL에서 동적으로 변수값을 가져올 수 있게 한다.
+  - 클라이언트에서의 내비게이션
+    - Next.js에서는 애플리케이션 안의 다른 페이지로의 이동하기 위한 Link 컴포넌트가 있다.
 
 <hr />
 
@@ -335,7 +342,22 @@
       - 스스로 닫는 태그 사용하기   `<Text />`
       - 반환할 때 반드시 하나의 태그로 감싸기
       - JSX 안에서 자바스크립트 표현식을 보여줄 땐 중괄호 사용
-    
+- react-native component
+  - SafeAreaView
+    - iPhone X 이상 기종에서 디스플레이의 보이지 않는 영역 및 최하단 영역에 내용이 보여지는 것을
+      방지해준다.
+  - View
+    - 가장 기본적인 컴포넌트로 레이아웃 및 스타일을 담당한다.
+  - Text
+    - 텍스트를 보여주는 역할을 한다.
+  - TextInput
+    - 키보드 입력을 받아낼 때 사용하는 컴포넌트
+    - iOS는 화면의 하단 부분이 키보드에 가려지는 반면, 안드로이드는 화면이 줄어든다.
+  - KeyboardAvoidingView
+    - 텍스트를 입력할 때 키보드가 화면을 가리지 않게 하기 위해 사용하는 컴포넌트
+  - StyleSheet
+    - 스타일링 컴포넌트
+    - 모든 스타일 속성은 camelCase로 작성해야 한다.
 - Hooks
   - useState
     - 상태 값을 관리하는 함수
@@ -358,12 +380,7 @@
   - AsyncStorage는 앱 내에서 간단하게 데이터를 저장할 수 있는 저장소이다.
   - 웹에서 사용하는 windows.localStorage와 매우 유사하다.
   - AsyncStorage는 키 값 저장소로서 간단하게 앱 내에 데이터를 저장하기 위해 사용할 수 있다.
-- react native component
-  - TextInput
-    - 키보드 입력을 받아낼 때 사용하는 컴포넌트
-    - iOS는 화면의 하단 부분이 키보드에 가려지는 반면, 안드로이드는 화면이 줄어든다.
-  - KeyboardAvoidingView
-    - 텍스트를 입력할 때 키보드가 화면을 가리지 않게 하기 위해 사용하는 컴포넌트
+
 <hr />
 
 ## BACK
