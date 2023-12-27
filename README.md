@@ -233,8 +233,14 @@
   - 메모이제이션 훅
     - useMemo
     - useCallback
-      - useMemo는 특정 결과값을 재사용 할 떄 사용하는 반면, useCallback은 특정 함수를 새로 만들지 않고
+      - useMemo는 특정 결과값을 재사용 할 때 사용하는 반면, useCallback은 특정 함수를 새로 만들지 않고
         재사용하고 싶을 때 사용한다.
+  - 기타
+    - useRef
+      - 함수 컴포넌트에서 ref를 쉽게 사용할 수 있도록 한다. useRef를 사용하여 ref를
+        사용하여 ref를 설정하면 useRef를 통해 만든 객체 안의 current 값이 실제 엘리먼트를 가리킨다.
+      - 컴포넌트 로컬 변수를 사용해야 할 때도 useRef를 활용할 수 있다. 여기서 로컬 변수란
+        렌더링과 상관없이 바뀔 수 있는 값을 의미한다.
 - context
   - Provider를 사용할 때 value를 명시하지 않으면 오류가 발생한다.
 - 리덕스
