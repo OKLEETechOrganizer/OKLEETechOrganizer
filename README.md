@@ -388,6 +388,8 @@
     - 화면 최상단 상태 영역
     - iOS는 색상을 바꾸려면 View로 색상을 채워야 한다.
     - 안드로이드는 색상을 StatusBar 컴포넌트의 backgroundColor 속성을 이용할 수 있다.
+  - TouchableOpacity
+    - 터치했을 때 투명도를 조정한다.
 - Hooks
   - useState
     - 상태 값을 관리하는 함수
