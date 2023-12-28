@@ -358,6 +358,10 @@
   - StyleSheet
     - 스타일링 컴포넌트
     - 모든 스타일 속성은 camelCase로 작성해야 한다.
+  - StatusBar
+    - 화면 최상단 상태 영역
+    - iOS는 색상을 바꾸려면 View로 색상을 채워야 한다.
+    - 안드로이드는 색상을 StatusBar 컴포넌트의 backgroundColor 속성을 이용할 수 있다.
 - Hooks
   - useState
     - 상태 값을 관리하는 함수
