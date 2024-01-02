@@ -422,6 +422,12 @@
          $ cd ios
          $ pod install
       ```
+- react-navigation
+  - 여러 화면으로 구성된 애플리케이션을 만드려면 내비게이션 관련 서드 파티 라이브러리를 사용해야 한다.
+  - 설치법</br>
+    `$ yarn add @react-navigation/native`
+    - 의존 라이브러리 설치</br>
+      ` yarn add react-native-screens react-native-safe-area-context`
 
 <hr />
 
