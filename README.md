@@ -415,6 +415,13 @@
     저장하여 사용하는 경우가 많다.
   - 웹에서 사용하는 windows.localStorage와 매우 유사하다.
   - AsyncStorage는 키 값 저장소로서 간단하게 앱 내에 데이터를 저장하기 위해 사용할 수 있다.
+  - 설치하기</br>
+    `$ yarn add @react-native-community/async-storage`
+    - iOS에서는 다시 pod install 해줘야 한다.</br>
+      ```
+         $ cd ios
+         $ pod install
+      ```
 
 <hr />
 
