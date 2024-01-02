@@ -428,6 +428,27 @@
     `$ yarn add @react-navigation/native`
     - 의존 라이브러리 설치</br>
       ` yarn add react-native-screens react-native-safe-area-context`
+  - 다양한 내비게이터
+    - Drawer Navigator
+      - 좌측 혹은 우측에 사이드바를 만들고 싶을 때 사용하는 내비게이터이다.
+      - 사이드바를 모바일 앱에서는 드로어라고 부른다.
+      - 설치</br>
+        `$ yarn install @react-navigation/drawer react-native-gesture-handler react-native-reanimated`
+      - navigation.push, navigation.pop 같은 기능들은 드로어 내비게이터에서 호환되지 않는다.
+    - Bottom Tab Navigator
+      - 하단에 탭을 보여주는 내비게이터이다.
+        - 설치</br>
+        `$ yarn add @react-navigation/bottom-tabs react-native-vector-icons`
+    - Material Top Tab Navigator
+      - 탭을 상단에 위치시킬 수 있다.
+      - 탭을 누르면 구글의 머티리얼 디자인 특유의 물결(ripple) 효과가 나타난다.
+      - 화면을 스와이프하는 형태로 우측/좌측 탭으로 전환할 수도 있다.
+      - 설치</br>
+        `$ yarn add @react-navigation/material-top-tabs react-native-tab-view react-native-paper-view`
+    - Material Bottom Tab Navigator
+      - 설치</br>
+        `$ yarn add @react-navigation/material-bottom-tabs react-native-paper`
+
 
 <hr />
 
