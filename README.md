@@ -415,6 +415,19 @@
     저장하여 사용하는 경우가 많다.
   - 웹에서 사용하는 windows.localStorage와 매우 유사하다.
   - AsyncStorage는 키 값 저장소로서 간단하게 앱 내에 데이터를 저장하기 위해 사용할 수 있다.
+  - 설치하기</br>
+    `$ yarn add @react-native-community/async-storage`
+    - iOS에서는 다시 pod install 해줘야 한다.</br>
+      ```
+         $ cd ios
+         $ pod install
+      ```
+- react-navigation
+  - 여러 화면으로 구성된 애플리케이션을 만드려면 내비게이션 관련 서드 파티 라이브러리를 사용해야 한다.
+  - 설치법</br>
+    `$ yarn add @react-navigation/native`
+    - 의존 라이브러리 설치</br>
+      ` yarn add react-native-screens react-native-safe-area-context`
 
 <hr />
 
