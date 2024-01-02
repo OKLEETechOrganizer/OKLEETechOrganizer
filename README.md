@@ -448,8 +448,14 @@
     - Material Bottom Tab Navigator
       - 설치</br>
         `$ yarn add @react-navigation/material-bottom-tabs react-native-paper`
-  - 내비게이션 Hooks
-    - 
+  - 내비게이션 Hooks 
+    - useNavigation
+      - 이 Hook을 사용하면 Screen으로 사용되고 있지 않은 컴포넌트에서도 navigation 객체를 사용할 수 있다.
+      - useNavigation을 사용하면 navigation을 상위 컴포넌트에서 Props로 넣어주지 않아도 사용할 수 있다.
+    - useRoute
+      - useRoute는 useNavigation과 비슷하게, Screen이 아닌 컴포넌트에서 route 객체를 사용할 수 있게 한다.
+    - useFocusEffect
+      - 화면에 포커스가 잡혔을 때 특정 작업을 할 수 있게 하는 Hook이다.
 
 <hr />
 
