@@ -587,6 +587,18 @@
 ## DEVOPS
 ### Cloud Providers
 #### AWS
+- AWS S3
+  - 데이터를 버킷 내의 객체로 저장하는 객체 스토리지 서비스이다.
+    객체는 해당 파일을 설명하는 모든 메타데이터이고, 버킷은 객체에 대한 컨테이너이다.
+    각 객체에 키(또는 키 이름)이 있으며, 이는 버킷 내 객체에 대한 고유한 식별자이다.
+  - 데이터 일관성 모델
+    - 버킷에 있는 객체의 PUT 및 DELETE 요청에 대해 강력한 쓰기 후 읽기(read-after-write) 일관성을 제공한다.
+    - 동시 작성자에 대한 객체 잠금을 지원하지 않는다. 두 PUT 요청을 동시에 같은 키에 대해 실행할 경우 타임스탬프가 최신인 요청이 우선 적용된다.
+  - AWS S3 액세스
+    - AWS Management Console
+    - AWS Command Line Interface
+    - AWS SDK
+    - Amazon S3 REST API
 - AWS ECR
   - 도커 이미지 파일을 pull, push 할 수 있는 컨테이너 이미지 저장소이다.
 - AWS ECS
