@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+actor teacher
+actor student
+
+package teacherRole {
+    usecase "클래스 생성" as t1
+    usecase "클래스 접속 승인" as t2
+    usecase "시험지 만들기" as t3
+    usecase "채점" as t4
+    usecase "분석" as t5
+    usecase "이의 신청 승인" as t6
+}
+
+package studentRole {
+    usecase "클래스 접속" as classConnect
+    usecase "비밀번호 확인" as checkPassword
+    classConnect ..> checkPassword : include
+    usecase "정답 올리기" as s2
+    usecase "분석" as s3
+    usecase "정답 이의 신청" as s4
+}
+
+teacher -- t1
+teacher -- t2
+teacher -- t3
+teacher -- t4
+teacher -- t5
+teacher -- t6
+
+student -- classConnect
+student -- s2
+student -- s3
+student -- s4
+
+@enduml
