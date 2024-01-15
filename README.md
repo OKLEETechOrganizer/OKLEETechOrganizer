@@ -373,18 +373,20 @@
 
 ### Server Side Rendering
 #### Next.js
-- 라우팅
-  - 버전13에서 Next.js는 공유 레이아웃, 중첩 라우팅, 로딩 상태, 오류 처리 등을 지원하는 React Server Components를 기반으로 
-    구축된 새로운 App Router를 도입하였다.
-  - 파일규칙
-    - layout
-      -  세그먼트 및 해당 하위 항목에 대한 공유 UI
-    - page
-      - 경로의 고유한 UI 및 경로에 공개적으로 액세스 가능
-  - getServerSideProps
-    - next.js의 내장 함수로서, URL에서 동적으로 변수값을 가져올 수 있게 한다.
-  - 클라이언트에서의 내비게이션
-    - Next.js에서는 애플리케이션 안의 다른 페이지로의 이동하기 위한 Link 컴포넌트가 있다.
+- 라우팅 
+  - App Router
+    - 버전13에서 Next.js는 공유 레이아웃, 중첩 라우팅, 로딩 상태, 오류 처리 등을 지원하는 React Server Components를 기반으로 
+      구축된 새로운 App Router를 도입하였다.
+    - 파일규칙
+      - layout
+        -  세그먼트 및 해당 하위 항목에 대한 공유 UI
+      - page
+        - 경로의 고유한 UI 및 경로에 공개적으로 액세스 가능
+    - 클라이언트에서의 내비게이션
+      - Next.js에서는 애플리케이션 안의 다른 페이지로의 이동하기 위한 Link 컴포넌트가 있다.
+  - Pages Router
+    - getServerSideProps
+      - next.js의 내장 함수로서, URL에서 동적으로 변수값을 가져올 수 있게 한다.
 - 렌더링 전략
   - SSR(Server-Side-Rendering)
     - 요청에 따라 서버에서 html 페이지를 동적으로 렌더링하고 웹 브라우저로 전송할 수 있다. 
