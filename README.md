@@ -281,6 +281,15 @@
         사용하여 ref를 설정하면 useRef를 통해 만든 객체 안의 current 값이 실제 엘리먼트를 가리킨다.
       - 컴포넌트 로컬 변수를 사용해야 할 때도 useRef를 활용할 수 있다. 여기서 로컬 변수란
         렌더링과 상관없이 바뀔 수 있는 값을 의미한다.
+  - useCallback vs useEffect
+    - useCallback
+      - 콜백함수를 자식에게 전달해줄 때 사용
+      - 자주 렌더링 위험이 있는 요소를 성능 최적화를 위해 사용
+      - const onChange = useCallback(e => {...}); 이렇게 지정하고 자식에게 던진다
+    - useEffect
+      - 사이드 이펙트 방지를 위해 사용
+      - API 통신(data fetch), 이벤트 리스너 추가, DOM 업데이트 등
+      - useEffect(()=>{...}); 함수 호출을 통해, 실행한다
 - 컴포넌트 스타일링
   - 일반 CSS
   - Sass
