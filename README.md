@@ -401,6 +401,13 @@
   - 라우팅 
     - 버전13에서 Next.js는 공유 레이아웃, 중첩 라우팅, 로딩 상태, 오류 처리 등을 지원하는 React Server Components를 기반으로 
       구축된 새로운 App Router를 도입하였다.
+  - 렌더링
+    - 서버 컴포넌트
+      - 정적 렌더링의 경우 라우트는 빌드 시 렌더링 되거나 데이터 재검증 후 백그라운드에서 렌더링 된다.
+      - 동적 렌더링은 요청 시점에 렌더링 된다. 사용자 맞춤 데이터가 있거나 쿠키, URL searchParam과 같이 요청 시점에 알 수 있는 정보가 있는 경우 유용하다.
+    - 클라이언트 컴포넌트
+      - 클라이언트 컴포넌트는 state, effect, event listener를 사용할 수 있다.
+      - 브라우저 API (ex.window, localStorage ...) 사용 가능하다.
 - Pages Router 버전
   - getServerSideProps
     - next.js의 내장 함수로서, URL에서 동적으로 변수값을 가져올 수 있게 한다.
