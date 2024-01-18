@@ -358,6 +358,31 @@
   (인수명: 인수_타입): 반환값_타입 => 자바스크립트_식
   let sayHello = (name: string): string => `Hello ${name}`
   ```
+- 타입스크립트의 타입 시스템
+  - 타입 애너테이션 방식
+    - 타입을 명시적으로 선언해서 어떤 타입 값이 저장되는지를 컴파일러에 직접 알려주는 문법
+    - 변수명 뒤에 :type 방식으로 작성
+  - 구조적 타이핑
+    - 이름으로 타입을 구분하는 명목적인 타입 언어의 특징과 달리 타입스크립트는 구조로 타입을 구분
+    - ```
+      interface Cartoon {
+        price: number;
+      }
+      
+      interface Novel {
+        price: number;
+      }
+      
+      let cartoon: Cartoon = { price: 3000 };
+      let novel: Novel = { price: 12000 };
+      
+      cartoon = novel;
+      novel = cartoon;
+      // 타입이 서로 호환된다.
+      ```
+  - 구조적 서브타이핑
+    - 객체의 프로퍼티를 바탕으로 타입을 구분
+    - 이름이 다른 객체라도 가진 속성이 동일하다면 서로 호환 가능한 타입으로 간주함
 - 타입스크립트에서 지원하는 타입
   - 원시 값, 객체, 함수
   - any : 어떤 타입의 변수에도 할당 가능
