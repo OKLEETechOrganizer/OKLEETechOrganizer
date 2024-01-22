@@ -453,6 +453,16 @@
     - 클라이언트 컴포넌트
       - 클라이언트 컴포넌트는 state, effect, event listener를 사용할 수 있다.
       - 브라우저 API (ex.window, localStorage ...) 사용 가능하다.
+  - File Conventions
+    - page.js
+      - route에 유일한 UI이다.
+      - props
+        - params
+          - 루트 세그먼트부터 해당 페이지까지의 동적 경로 매개변수를 포함하는 객체이다
+            <img src="front/server_side_rendering/next/params.png">
+        - searchParams
+          - 검색 매개변수를 포함하는 객체
+            <img src="front/server_side_rendering/next/search_params.png">
 - Pages Router 버전
   - getServerSideProps
     - next.js의 내장 함수로서, URL에서 동적으로 변수값을 가져올 수 있게 한다.
