@@ -446,6 +446,16 @@
   - 라우팅 
     - 버전13에서 Next.js는 공유 레이아웃, 중첩 라우팅, 로딩 상태, 오류 처리 등을 지원하는 React Server Components를 기반으로 
       구축된 새로운 App Router를 도입하였다.
+    - Redirecting
+      - Next에서 redirect를 핸들링하는 몇 가지 방법이 있다.
+        <img src="front/server_side_rendering/next/redirecting.png">
+  - Data Fetching
+    - Server Actions and Mutations
+      - Server Actions는 서버에서 실행되는 비동기적 함수들을 말한다. 이것들은 서버 및 클라이언트 구성 요소에서 Next.js 애플리케이션의 
+        양식 제풀 및 데이터 변형을 처리하는 데 사용할 수 있다.
+      - Convention
+        - server action은 리액트의 "use server" 지시문을 통해 정의될 수 있다. async function의 상단에 지시문을 배치하여 해당
+          기능을 서버 작업으로 표시하거나 별도의 파일 상단에 배치하여 해당 파일의 모든 ㄴ내보내기를 서버 작업으로 표시할 수 있다.
   - 렌더링
     - 서버 컴포넌트
       - 정적 렌더링의 경우 라우트는 빌드 시 렌더링 되거나 데이터 재검증 후 백그라운드에서 렌더링 된다.
