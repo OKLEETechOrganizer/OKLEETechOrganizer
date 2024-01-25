@@ -1,0 +1,237 @@
+@startuml
+
+
+title 장바구니 시퀀스 다이어그램
+
+
+actor 회원
+participant FRONT
+participant BasketController
+'main service
+participant BasketCommonService
+participant BasketService
+'middle register service
+participant BasketRegister
+'middle goods service
+participant BasketGoodsService
+'middle validator service
+participant BasketMainValidator
+'api
+participant 상품API #99FF99
+participant 마케팅API #99FF99
+participant 회원API #99FF99
+'db
+database OP_BSKET_INFO
+
+
+== 장바구니 등록 ==
+회원 -> FRONT: 장바구니 등록
+activate FRONT
+    FRONT -> BasketController: registerBasket()
+    activate BasketController
+        BasketController -> BasketService: registerBasket()
+        activate BasketService
+            BasketService -> 상품API: getGoodsDetailInfoList() [상품상세정보 조회]
+            activate 상품API
+            BasketService <-- 상품API: List<ProductOrderResponse>
+            deactivate 상품API
+
+            BasketService -> BasketRegister: registerBasket()
+            activate BasketRegister
+                BasketRegister -> BasketRegister: validate()
+                activate BasketRegister
+                deactivate BasketRegister
+
+                BasketRegister -> OP_BSKET_INFO: saveBasket() [장바구니 등록]
+                activate BasketRegister
+                activate OP_BSKET_INFO
+                deactivate OP_BSKET_INFO
+                deactivate BasketRegister
+
+                BasketRegister -> BasketRegister: afterValidate()
+                activate BasketRegister
+                BasketService <-- BasketRegister: void
+                deactivate BasketRegister
+            deactivate BasketRegister
+
+        BasketController <-- BasketService: void
+        deactivate BasketService
+
+    FRONT <-- BasketController: void
+    deactivate BasketController
+deactivate FRONT
+
+newpage
+== 장바구니 조회 ==
+회원 -> FRONT: 장바구니 조회
+activate FRONT
+    FRONT -> BasketController: getBasket()
+    activate BasketController
+        BasketController -> BasketService: getBasket()
+        activate BasketService
+
+            BasketService -> BasketGoodsService: getBasketGoods()
+            activate BasketService
+            activate BasketGoodsService
+            BasketGoodsService -> OP_BSKET_INFO: getBasketList() [장바구니 조회]
+            activate OP_BSKET_INFO
+            BasketGoodsService <-- OP_BSKET_INFO : List<Basket>
+            deactivate OP_BSKET_INFO
+
+            BasketGoodsService -> 상품API: getGoodsDetailInfoList() [상품상세정보 조회]
+            activate 상품API
+            BasketGoodsService <-- 상품API: List<ProductOrderResponse>
+            deactivate 상품API
+
+            BasketGoodsService -> BasketGoodsService: makeBasketGoods()
+            activate BasketGoodsService
+            deactivate BasketGoodsService
+            BasketService <-- BasketGoodsService: List<BasketGoods>
+            deactivate BasketGoodsService
+            deactivate BasketService
+            |||
+            |||
+
+            BasketService -> 마케팅API: getOrderBenefitInfo() [장바구니 최대혜택가 조회]
+            activate BasketService
+            activate 마케팅API
+            BasketService <-- 마케팅API: BenefitResponse
+            deactivate 마케팅API
+
+            BasketService -> 회원API: getOrderBenefitInfo() [상품 좋아요 여부 조회]
+            activate 회원API
+            BasketService <-- 회원API: List<WishYnResponse>
+            deactivate 회원API
+            deactivate BasketService
+            |||
+            |||
+
+            BasketService -> 상품API: getDeliveryPolicyList() [배송정책번호별 배송비 조회]
+            activate BasketService
+            activate 상품API
+            BasketService <-- 상품API : List<WishYnResponse>
+            deactivate 상품API
+            deactivate BasketService
+        BasketController <-- BasketService: BasketResponse
+        deactivate BasketService
+    FRONT <-- BasketController: BasketResponse
+    deactivate BasketController
+    회원 <-- FRONT: 장비구니 조회 결과
+deactivate FRONT
+
+newpage
+== 옵션 변경 ==
+회원 -> FRONT: 장바구니 옵션 변경
+activate FRONT
+    FRONT -> BasketController: registerBasket()
+    activate BasketController
+        BasketController -> BasketService: registerBasket()
+        activate BasketService
+            BasketService -> 상품API: getGoodsDetailInfoList() [상품상세정보 조회]
+            activate 상품API
+            BasketService <-- 상품API: List<ProductOrderResponse>
+            deactivate 상품API
+
+            BasketService -> BasketRegister: registerBasket()
+            activate BasketRegister
+                BasketRegister -> BasketRegister: validate()
+                activate BasketRegister
+                deactivate BasketRegister
+
+                BasketRegister -> OP_BSKET_INFO: saveBasket() [장바구니 등록]
+                activate BasketRegister
+                activate OP_BSKET_INFO
+                deactivate OP_BSKET_INFO
+                deactivate BasketRegister
+
+                BasketRegister -> BasketRegister: afterValidate()
+                activate BasketRegister
+                BasketService <-- BasketRegister: void
+                deactivate BasketRegister
+            deactivate BasketRegister
+
+        BasketController <-- BasketService: void
+        deactivate BasketService
+
+    FRONT <-- BasketController: void
+    deactivate BasketController
+deactivate FRONT
+
+newpage
+== 장바구니 삭제 ==
+회원 -> FRONT: 장바구니 삭제
+activate FRONT
+    FRONT -> BasketController: deleteBasket()
+    activate BasketController
+        BasketController -> BasketService: deleteBasket()
+        activate BasketService
+        BasketService -> OP_BSKET_INFO: deleteBasket() [장바구니 삭제]
+        BasketController <-- BasketService: void
+        deactivate BasketService
+    FRONT <-- BasketController: void
+    deactivate BasketController
+deactivate FRONT
+
+newpage
+== 장바구니 병합 ==
+회원 -> FRONT: 장바구니 병합
+activate FRONT
+    FRONT -> BasketController: combineBsket()
+    activate BasketController
+        BasketController -> BasketCommonService: combineBsket()
+        activate BasketCommonService
+        BasketCommonService -> OP_BSKET_INFO: getBasketList() [장바구니 조회]
+        activate BasketCommonService
+        activate OP_BSKET_INFO
+        OP_BSKET_INFO -> BasketCommonService: List<Basket>
+        deactivate OP_BSKET_INFO
+        deactivate BasketCommonService
+        |||
+        BasketCommonService -> OP_BSKET_INFO: deleteBasket() [장바구니 삭제]
+        activate BasketCommonService
+        BasketCommonService -> OP_BSKET_INFO: registerBasket() [장바구니 등록]
+        deactivate BasketCommonService
+        |||
+        BasketCommonService -> OP_BSKET_INFO: updateBasketMember() [장바구니 바로구매 회원번호 수정]
+        BasketController <-- BasketCommonService: void
+        deactivate BasketCommonService
+    FRONT <-- BasketController: void
+    deactivate BasketController
+deactivate FRONT
+
+newpage
+== 장바구니 상품 주문가능여부 체크 ==
+회원 -> FRONT: 장바구니 상품 주문가능여부 체크
+activate FRONT
+    FRONT -> BasketController: validateBasket()
+    activate BasketController
+        BasketController -> BasketService: validateBasket()
+        activate BasketService
+            BasketService -> BasketGoodsService
+            activate BasketGoodsService
+                BasketGoodsService -> OP_BSKET_INFO: getBasketList() [장바구니 조회]
+                activate OP_BSKET_INFO
+                BasketGoodsService <-- OP_BSKET_INFO: List<Basket>
+                deactivate OP_BSKET_INFO
+                |||
+                BasketGoodsService -> 상품API: getGoodsDetailInfoList() [상품상세정보 조회]
+                activate 상품API
+                BasketGoodsService <-- 상품API: List<ProductOrderResponse>
+                deactivate 상품API
+            BasketService <-- BasketGoodsService
+            deactivate BasketGoodsService
+            |||
+            BasketService -> BasketMainValidator
+            activate BasketMainValidator
+                BasketMainValidator -> BasketMainValidator: validateGoods() [재고 확인, 품절 확인]
+                BasketMainValidator -> BasketMainValidator: validateDeliveryPolicy() [배송비 정책 확인]
+                BasketMainValidator -> BasketMainValidator: validateOrderer() [회원정보 조회, 비정상 활동 확인, 15세 이상 확인]
+            BasketService <-- BasketMainValidator
+            deactivate BasketMainValidator
+        BasketController <-- BasketService: void
+        deactivate BasketService
+    FRONT <-- BasketController: void
+    deactivate BasketController
+deactivate FRONT
+
+@enduml
