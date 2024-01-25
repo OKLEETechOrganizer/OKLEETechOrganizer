@@ -474,6 +474,17 @@
     - Redirecting
       - Next에서 redirect를 핸들링하는 몇 가지 방법이 있다.
         <img src="front/server_side_rendering/next/redirecting.png">
+    - Middleware
+      - Matching paths
+        - 미들웨어는 프로젝트의 모든 루트에서 호출된다. 실행순서는 다음과 같다.
+          <img src="front/server_side_rendering/next/matching_paths.png">
+      - NextResponse
+        - NextResponse API는 다음과 같은 일을 수행할 수 있다.
+          - 다른 URL으로 들어오는 요청을 redirect
+          - 주어진 URL을 표시한 응답을 rewrite
+          - API Routes, getServerSideProps, rewrite destination에 대해 request headers를 설정할 수 있다.
+          - 응답 쿠키를 설정
+          - 응답 헤더를 설정
   - Data Fetching
     - Server Actions and Mutations
       - Server Actions는 서버에서 실행되는 비동기적 함수들을 말한다. 이것들은 서버 및 클라이언트 구성 요소에서 Next.js 애플리케이션의 
