@@ -346,7 +346,13 @@
 
 ### Type Checkers
 #### TypeScript
-
+- Object Types
+  - Property Modifiers
+    - Optional Properties
+    - readonly Properties
+    - Index Signatures
+      - 유형 속성의 모든 이름은 모르지만, type을 알고 있는 경우에 사용할 수 있다.
+        <img src="front/type_checkers/typescript/index_signatures_1.png">
 - Type Manipulation
   - Generics
     ```
@@ -370,83 +376,83 @@
     선언 키워드 변수명: 타입
     let a: number;
     ```
-    - 선언 키워드 let과 var의 차이는 호이스팅 여부이다.
-      var은 변수를 사용한 후에 선언이 가능하지만 let은 불가능하다.
-    - arrow function의 경우 다음과 같이 타입을 지정한다.
-      ```
-      (인수명: 인수_타입): 반환값_타입 => 자바스크립트_식
-      let sayHello = (name: string): string => `Hello ${name}`
-      ```
-    - 타입스크립트의 타입 시스템
-      - 타입 애너테이션 방식
-        - 타입을 명시적으로 선언해서 어떤 타입 값이 저장되는지를 컴파일러에 직접 알려주는 문법
-        - 변수명 뒤에 :type 방식으로 작성
-      - 구조적 타이핑
-        - 이름으로 타입을 구분하는 명목적인 타입 언어의 특징과 달리 타입스크립트는 구조로 타입을 구분
-        - ```
-          interface Cartoon {
-            price: number;
-          }
+  - 선언 키워드 let과 var의 차이는 호이스팅 여부이다.
+    var은 변수를 사용한 후에 선언이 가능하지만 let은 불가능하다.
+  - arrow function의 경우 다음과 같이 타입을 지정한다.
+    ```
+    (인수명: 인수_타입): 반환값_타입 => 자바스크립트_식
+    let sayHello = (name: string): string => `Hello ${name}`
+    ```
+  - 타입스크립트의 타입 시스템
+    - 타입 애너테이션 방식
+      - 타입을 명시적으로 선언해서 어떤 타입 값이 저장되는지를 컴파일러에 직접 알려주는 문법
+      - 변수명 뒤에 :type 방식으로 작성
+    - 구조적 타이핑
+      - 이름으로 타입을 구분하는 명목적인 타입 언어의 특징과 달리 타입스크립트는 구조로 타입을 구분
+      - ```
+        interface Cartoon {
+          price: number;
+        }
       
-          interface Novel {
-            price: number;
-          }
+        interface Novel {
+          price: number;
+        }
       
-          let cartoon: Cartoon = { price: 3000 };
-          let novel: Novel = { price: 12000 };
+        let cartoon: Cartoon = { price: 3000 };
+        let novel: Novel = { price: 12000 };
       
-          cartoon = novel;
-          novel = cartoon;
-          // 타입이 서로 호환된다.
-          ```
-      - 구조적 서브타이핑
-        - 객체의 프로퍼티를 바탕으로 타입을 구분
-        - 이름이 다른 객체라도 가진 속성이 동일하다면 서로 호환 가능한 타입으로 간주함
-    - 타입스크립트에서 지원하는 타입
-      - 원시 값, 객체, 함수
-      - any : 어떤 타입의 변수에도 할당 가능
-      - unknown : 어떤 타입도 할당 가능하지만 다른 변수에 할당 또는 사용할 때 타입을 강제함
-      - never : 어떤 값도 할당 불가능
-    - 타입 리터럴 & 객체 리터럴
-      - 타입 리터럴
-        - 오직 하나의 값을 나타내는 타입
-          ```
-            let a = true     // boolean
-            const c = true   // true => const 사용하여 선언하는 경우 값이 불변이기 때문에 타입스크립트는 가장 좁은 타입으로 추론한다.
-          ```
-      - 객체 리터럴
-        - 객체(Object)를 생성하는 방법
-          ```
-            let a = {
-              b: 'x'
-            }   // {b: string} 으로 추론된다.
-          ```
-        - cf) 객체는 const로 선언하는 경우 타입스크립트가 더 좁은 타입으로 추론하지 않는다.
-          ```
-            const timer: {count: number} = {
-              count: 12
-            }   // {count: number}
-          ```
-    - 타입 구성하는 방법
-      - 유니언 : `|`를 사용하여 여러 타입을 조합할 수 있다.
-      ```
-      function getLength(obj: string | string[]) {
-        // obj는 sting 또는 string 배열 타입일 수 있음
-      }
+        cartoon = novel;
+        novel = cartoon;
+        // 타입이 서로 호환된다.
+        ```
+    - 구조적 서브타이핑
+      - 객체의 프로퍼티를 바탕으로 타입을 구분
+      - 이름이 다른 객체라도 가진 속성이 동일하다면 서로 호환 가능한 타입으로 간주함
+  - 타입스크립트에서 지원하는 타입
+    - 원시 값, 객체, 함수
+    - any : 어떤 타입의 변수에도 할당 가능
+    - unknown : 어떤 타입도 할당 가능하지만 다른 변수에 할당 또는 사용할 때 타입을 강제함
+    - never : 어떤 값도 할당 불가능
+  - 타입 리터럴 & 객체 리터럴
+    - 타입 리터럴
+      - 오직 하나의 값을 나타내는 타입
+        ```
+          let a = true     // boolean
+          const c = true   // true => const 사용하여 선언하는 경우 값이 불변이기 때문에 타입스크립트는 가장 좁은 타입으로 추론한다.
+        ```
+    - 객체 리터럴
+      - 객체(Object)를 생성하는 방법
+        ```
+          let a = {
+            b: 'x'
+          }   // {b: string} 으로 추론된다.
+        ```
+      - cf) 객체는 const로 선언하는 경우 타입스크립트가 더 좁은 타입으로 추론하지 않는다.
+        ```
+          const timer: {count: number} = {
+            count: 12
+          }   // {count: number}
+        ```
+  - 타입 구성하는 방법
+    - 유니언 : `|`를 사용하여 여러 타입을 조합할 수 있다.
+    ```
+    function getLength(obj: string | string[]) {
+      // obj는 sting 또는 string 배열 타입일 수 있음
+    }
   
-      type status = "Ready" | "Waiting" //변수가 가질 수 있는 값을 제한
-      ```
-      - 제네릭 : 어떤 타입이든 정의될 수 있지만 호출되는 시점에 타입이 결정된다.
-    - 데커레이터를 활용하여 횡단 관심사를 분리하여 관점 지향 프로그래밍을 적용한 코드를 적용할 수 있다.
-    - 에러처리
-      - null 반환
-        - 타입 안정성을 유지하면서 에러를 처리하는 가장 간단한 방법이다.
-        - 로그를 일일이 확인해가며 디버깅을 해야 한다.
-        - 모든 연산에서 null을 확인해야 하므로 연산을 중첩하거나 연결할 때 코드가 지저분해진다.
-      - 예외 던지기
-      - 예외 반환
-        - 예외 반환을 한 것에 대해 처리해야 하며 그렇지 않으면 컴파일 타입에 TypeError가 발생한다.
-      - Option 타입
+    type status = "Ready" | "Waiting" //변수가 가질 수 있는 값을 제한
+    ```
+    - 제네릭 : 어떤 타입이든 정의될 수 있지만 호출되는 시점에 타입이 결정된다.
+  - 데커레이터를 활용하여 횡단 관심사를 분리하여 관점 지향 프로그래밍을 적용한 코드를 적용할 수 있다.
+  - 에러처리
+    - null 반환
+      - 타입 안정성을 유지하면서 에러를 처리하는 가장 간단한 방법이다.
+      - 로그를 일일이 확인해가며 디버깅을 해야 한다.
+      - 모든 연산에서 null을 확인해야 하므로 연산을 중첩하거나 연결할 때 코드가 지저분해진다.
+    - 예외 던지기
+    - 예외 반환
+      - 예외 반환을 한 것에 대해 처리해야 하며 그렇지 않으면 컴파일 타입에 TypeError가 발생한다.
+    - Option 타입
   
 <hr />
 
