@@ -509,6 +509,9 @@
         - searchParams
           - 검색 매개변수를 포함하는 객체
             <img src="front/server_side_rendering/next/search_params.png">
+  - next.config.js Options
+    - rewrites
+      - Rewrites는 request path를 다른 destination path로 매핑시킬 수 있게 한다.
 - Pages Router 버전
   - getServerSideProps
     - next.js의 내장 함수로서, URL에서 동적으로 변수값을 가져올 수 있게 한다.
