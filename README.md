@@ -281,6 +281,8 @@
   - 라우팅 관련 훅
     - useParams
     - useSearchParams
+  - useContext
+    - useContext는 컴포넌트에서 context를 읽고 구독할 수 있게 해주는 리액트 hook이다.
   - 기타
     - useRef
       - 함수 컴포넌트에서 ref를 쉽게 사용할 수 있도록 한다. useRef를 사용하여 ref를
