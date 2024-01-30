@@ -5,12 +5,13 @@
    1. [Software Engineering](#Software-Engineering)
 1. [FRONT](#FRONT)
    1. [HTML](#HTML)
-   2. [JavaScript](#JavaScript)
-   3. [Package Manager](#Package-Manager)
-   4. [Framework](#Framework)
-   5. [Type Checkers](#Type-Checkers)
-   6. [Server Side Rendering](#Server-Side-Rendering)
-   7. [Mobile Applications](#Mobile-Applications)
+   2. [CSS](#CSS)
+   3. [JavaScript](#JavaScript)
+   4. [Package Manager](#Package-Manager)
+   5. [Framework](#Framework)
+   6. [Type Checkers](#Type-Checkers)
+   7. [Server Side Rendering](#Server-Side-Rendering)
+   8. [Mobile Applications](#Mobile-Applications)
 2. [BACK](#BACK)
    1. [Language](#Language)
    2. [Framework BackEnd](#Framework-BackEnd)
@@ -96,6 +97,12 @@
              og:url
           */
         ```
+
+### CSS
+- 반응형 웹
+  - 반응형 웹이란 PC, TV, 내비게이션, 스마트 기기 등 기기마다 또는 환경마다 최적화된 웹사이트를 제공해주는 것을 말한다.
+  - 예를 들어 화면이 작은 기기에서 반응형 웹으로 제작된 웹사이트를 접속했을 때는 웹사이트의 구조를 작은 화면에 최적화된 구조로
+    변경하여 보여주고, 큰 화면을 가진 기기에서는 웹사이트의 구조를 큰 화면에 최적화된 구조로 변경하여 보여준다.
 
 ### JavaScript
 - 일반 함수과 화살표 함수에서 this의 차이
