@@ -500,7 +500,7 @@
         양식 제풀 및 데이터 변형을 처리하는 데 사용할 수 있다.
       - Convention
         - server action은 리액트의 "use server" 지시문을 통해 정의될 수 있다. async function의 상단에 지시문을 배치하여 해당
-          기능을 서버 작업으로 표시하거나 별도의 파일 상단에 배치하여 해당 파일의 모든 ㄴ내보내기를 서버 작업으로 표시할 수 있다.
+          기능을 서버 작업으로 표시하거나 별도의 파일 상단에 배치하여 해당 파일의 모든 내보내기를 서버 작업으로 표시할 수 있다.
   - 렌더링
     - 서버 컴포넌트
       - 정적 렌더링의 경우 라우트는 빌드 시 렌더링 되거나 데이터 재검증 후 백그라운드에서 렌더링 된다.
@@ -521,6 +521,8 @@
   - next.config.js Options
     - rewrites
       - Rewrites는 request path를 다른 destination path로 매핑시킬 수 있게 한다.
+  - Edge Runtime
+    - Next.js의 Edge Runtime은 표준 Web API를 근간으로 한다.
 - Pages Router 버전
   - getServerSideProps
     - next.js의 내장 함수로서, URL에서 동적으로 변수값을 가져올 수 있게 한다.
