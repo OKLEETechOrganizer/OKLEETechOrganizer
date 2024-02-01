@@ -188,6 +188,19 @@
     draft.somewhere.deep.inside = 5;
   })
   ```
+- module.exports와 exports의 관계
+  - 기본적으로 module.exports, exports 모두 하나의 객체를 바라보고 있는데, 최종적으로 return 되는 것은 
+    무조건 module.export이다. 
+  - 만약 exports에 다른 객체를 할당하게 되면, module.exports의 객체와 달라지게 되고, exports에 어떤 변경을 해도 모듈에는 영향을 주지 못한다.
+    ```
+      var module = {
+  	      exports: {}
+      }
+      var exports = module.exports;
+      
+      return module.exports;
+    ```
+  
 <hr />
 
 ### Package-Manager
