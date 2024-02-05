@@ -309,6 +309,70 @@
         사용하여 ref를 설정하면 useRef를 통해 만든 객체 안의 current 값이 실제 엘리먼트를 가리킨다.
       - 컴포넌트 로컬 변수를 사용해야 할 때도 useRef를 활용할 수 있다. 여기서 로컬 변수란
         렌더링과 상관없이 바뀔 수 있는 값을 의미한다.
+      - useRef의 주요 이점
+        1. DOM 요소에 접근
+          - 가장 일반적으로 'useRef'는 함수 컴포넌트에서 DOM 요소에 접근하는 데 사용된다. 'useRef'로 생성한
+            객체의 'current'속성을 통해 해당 DOM 요소에 직접 접근 가능
+            ```
+             import React, { useRef, useEffect } from 'react';
+ 
+             const MyComponent = () => {
+                const myRef = useRef(null);
+                
+                useEffect(() => {
+                   // myRef.current를 통해 DOM 요소에 접근
+                   console.log(myRef.current);
+                }, []);
+                
+                return <div ref={myRef}>Hello, World!</div>;
+             };
+            ```
+        2. 컴포넌트 간 통신
+          - 'useRef'는 컴포넌트 간에 값을 공유하고 통신하는 데에도 사용될 수 있다. 예를 들어, 자식 컴포넌트에서 부모
+            컴포넌트의 상테를 업데이트하고 싶을 때 활용할 수 있다.
+            ```
+              import React, { useRef } from 'react';
+
+              const ParentComponent = () => {
+                 const sharedValueRef = useRef('initial value');
+                 
+                 const ChildComponent = () => {
+                    // 부모 컴포넌트의 ref를 통해 값 읽기
+                    console.log(sharedValueRef.current);
+                 
+                    // 부모 컴포넌트의 ref를 통해 값 업데이트
+                    sharedValueRef.current = 'new value';
+                 };
+                 
+                 return (
+                    <div>
+                       <ChildComponent />
+                    </div>
+                 );
+              };
+            ```
+        3. 컴포넌트 렌더링과 무관한 값 저장
+          - 'useRef'에 저장된 값은 컴포넌트가 리렌더링될 때 변경되지 않는다. 따라서 'useRef'를 사용하면
+            값이 변경되더라도 컴포넌트가 다시 렌더링되지 않는다.
+            ```
+              import React, { useRef, useState } from 'react';
+
+              const MyComponent = () => {
+                 const renderCount = useRef(0);
+                 
+                 // 컴포넌트 렌더링 횟수 증가 (재렌더링되어도 값이 유지됨)
+                 renderCount.current += 1;
+                 
+                 const [state, setState] = useState('initial state');
+                 
+                 return (
+                    <div>
+                       <p>Render count: {renderCount.current}</p>
+                       <button onClick={() => setState('new state')}>Update State</button>
+                    </div>
+                 );
+              };
+            ```
   - useCallback vs useEffect
     - useCallback
       - 콜백함수를 자식에게 전달해줄 때 사용
