@@ -814,7 +814,25 @@
     파이프, 미들웨어, 인터셉터 같은 모듈과 코드의 의존 관계를 구성하는 프로그래밍적 장치들이 있다.
   - NestJS에서는 HTTP 요청을 보통 가드 -> 인터셉터 -> 파이프 -> 컨트롤러 -> 서비스 -> 리포지토리
     순서로 처리한다.
+<hr />
 
+#### SPRING
+- 기타
+  - FILTER
+    - GenericFilterBean과 OncePerRequestFilter의 차이
+      - 개요
+        - GenericFilter와 OncePerRequestFilter는 둘 다 대상을 필터로 등록해주는 인터페이스이다.
+      - Filter 동작 흐름
+        - Filter는 javax.servlet-api나 tomcat-embed-core를 사용하면 제공되는 Servlet Filter Interface로써 클라이언트의 서블릿 요청을 가장 먼저 받는다.
+        - 서블릿이 호출되기 전에 Before를 출력하고 필터를 거쳐서 서블릿이 호출되면 After가 출력된다.
+        - 이러한 Filter를 확장하여 Spring의 설정정보를 가져올 수 있게 만들어진 것이 GenericFilterBean이다.
+        - Filter와 GenericFilterBean은 둘 다 매 서블릿마다 호출이 된다.
+        - 서블릿은 사용자의 요청을 받으면 서블릿을 생성해 메모리에 저장해두고, 같은 클라이언트의 요청을 받으면 생성해둔 서블릿 객체를 재활용하여 요청을 처리한다.
+        - 문제는 이 서블릿이 다른 서블릿으로 dispatch되는 경우이다.
+        - 가장 대표적으로 Spring Security에서 인증과 접근 제어 기능이 Filter로 구현되는데 이러한 인증과 접근 제어는 RequestDispatcher 클래스에 의해 다른 서블릿으로 dispatch 되고, 이 때 이동할 서블릿에 도착하기 전에 다시 한번 filter chain을 거치게 된다.(Target API1 -> Target API2)
+        - 한 번의 요청에 한 번의 인증 처리만 하면 되는데 불필요하게 여러번 중복되어 인증처리를 하게 되는 것이다.
+        - 이런 문제를 해결하기 위해 등장한 것이 모든 서블릿에 일관된 요청을 처리하기 위해 만들어진 OncePerRequestFilter이다.
+        - 이 추상 클래스를 구현한 필터는 사용자의 한 번의 요청 당 딱 한 번만 실행되는 필터를 만들 수 있다.
 <hr />
 
 ### NoSQL
