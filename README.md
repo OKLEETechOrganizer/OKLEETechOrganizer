@@ -648,94 +648,94 @@
         - 스스로 닫는 태그 사용하기   `<Text />`
         - 반환할 때 반드시 하나의 태그로 감싸기
         - JSX 안에서 자바스크립트 표현식을 보여줄 땐 중괄호 사용
-- react-native component
-  - SafeAreaView
-    - iPhone X 이상 기종에서 디스플레이의 보이지 않는 영역 및 최하단 영역에 내용이 보여지는 것을
-      방지해준다.
-  - View
-    - 가장 기본적인 컴포넌트로 레이아웃 및 스타일을 담당한다.
-  - Text
-    - 텍스트를 보여주는 역할을 한다.
-  - TextInput
-    - 키보드 입력을 받아낼 때 사용하는 컴포넌트
-    - iOS는 화면의 하단 부분이 키보드에 가려지는 반면, 안드로이드는 화면이 줄어든다.
-  - KeyboardAvoidingView
-    - 텍스트를 입력할 때 키보드가 화면을 가리지 않게 하기 위해 사용하는 컴포넌트
-  - StyleSheet
-    - 스타일링 컴포넌트
-    - 모든 스타일 속성은 camelCase로 작성해야 한다.
-  - StatusBar
-    - 화면 최상단 상태 영역
-    - iOS는 색상을 바꾸려면 View로 색상을 채워야 한다.
-    - 안드로이드는 색상을 StatusBar 컴포넌트의 backgroundColor 속성을 이용할 수 있다.
-  - TouchableOpacity
-    - 터치했을 때 투명도를 조정한다.
-- Hooks
-  - useState
-    - 상태 값을 관리하는 함수
-    - `const [visible, setVisible] = useState(true)`
-- Context API
-  - 컴포넌트 사이에 공유되는 데이터를 위해 매번 공통 부모 컴포넌트를 수정하고 모든 컴포넌트에 
-    Props를 전달하여 데이터를 사용하는 과정은 비효율적이다. 이처럼 비효율적인 문제를 해결하기 위해 
-    리액트에서는 Flux라는 개념을 도입하였고, 그에 걸맞은 Context API를 제공하기 시작했다.
-  - Context는 부모 컴포넌트로부터 자식 컴포넌트로 전달되는 데이터의 흐름과는 상관없이, 전역적으로
-    사용되는 데이터를 다룬다.
-  - Context를 사용하기 위해서는 Context Api를 사용하여 Context의 프로바이더(Provider)와
-    컨슈머(Consumer)를 생성한다.
-  - Context에 저장된 데이터를 사용하기 위해서는 공통 부모 컴포넌트에 Context의 프로바이더를 사용하여
-    데이터를 제공하다. 그리고 데이터를 사용하려는 컴포넌트에서 Context의 컨슈머를 사용하여 실제
-    데이터를 사용(소비)한다.
-- AsyncStorage
-  - AsyncStorage는 리액트 네이티브에서 사용할 수 있는 key-value 형식의 저장소이다.
-  - AsyncStorage는 앱 내에서 간단하게 데이터를 저장할 수 있는 저장소이다.
-  - iOS에서는 네이티브 코드로 구현되어 있으며, 안드로이드에서는 네이티브 코드와 SQLite를 기반으로
-    구현되어 있다.
-  - 리액트에서 데이터를 다루는 Props와 State, Context는 휘발성이다. 이 데이터는 메모리에서만 존재하며, 
-    물리적으로 데이터를 저장하지 않는다. 따라서 데이터들은 API를 통해 서버에 저장하여 사용하거나, 앱 내에 
-    저장하여 사용하는 경우가 많다.
-  - 웹에서 사용하는 windows.localStorage와 매우 유사하다.
-  - AsyncStorage는 키 값 저장소로서 간단하게 앱 내에 데이터를 저장하기 위해 사용할 수 있다.
-  - 설치하기</br>
-    `$ yarn add @react-native-community/async-storage`
-    - iOS에서는 다시 pod install 해줘야 한다.</br>
-      ```
-         $ cd ios
-         $ pod install
-      ```
-- react-navigation
-  - 여러 화면으로 구성된 애플리케이션을 만드려면 내비게이션 관련 서드 파티 라이브러리를 사용해야 한다.
-  - 설치법</br>
-    `$ yarn add @react-navigation/native`
-    - 의존 라이브러리 설치</br>
-      ` yarn add react-native-screens react-native-safe-area-context`
-  - 다양한 내비게이터
-    - Drawer Navigator
-      - 좌측 혹은 우측에 사이드바를 만들고 싶을 때 사용하는 내비게이터이다.
-      - 사이드바를 모바일 앱에서는 드로어라고 부른다.
-      - 설치</br>
-        `$ yarn install @react-navigation/drawer react-native-gesture-handler react-native-reanimated`
-      - navigation.push, navigation.pop 같은 기능들은 드로어 내비게이터에서 호환되지 않는다.
-    - Bottom Tab Navigator
-      - 하단에 탭을 보여주는 내비게이터이다.
+  - react-native component
+    - SafeAreaView
+      - iPhone X 이상 기종에서 디스플레이의 보이지 않는 영역 및 최하단 영역에 내용이 보여지는 것을
+        방지해준다.
+    - View
+      - 가장 기본적인 컴포넌트로 레이아웃 및 스타일을 담당한다.
+    - Text
+      - 텍스트를 보여주는 역할을 한다.
+    - TextInput
+      - 키보드 입력을 받아낼 때 사용하는 컴포넌트
+      - iOS는 화면의 하단 부분이 키보드에 가려지는 반면, 안드로이드는 화면이 줄어든다.
+    - KeyboardAvoidingView
+      - 텍스트를 입력할 때 키보드가 화면을 가리지 않게 하기 위해 사용하는 컴포넌트
+    - StyleSheet
+      - 스타일링 컴포넌트
+      - 모든 스타일 속성은 camelCase로 작성해야 한다.
+    - StatusBar
+      - 화면 최상단 상태 영역
+      - iOS는 색상을 바꾸려면 View로 색상을 채워야 한다.
+      - 안드로이드는 색상을 StatusBar 컴포넌트의 backgroundColor 속성을 이용할 수 있다.
+    - TouchableOpacity
+      - 터치했을 때 투명도를 조정한다.
+  - Hooks
+    - useState
+      - 상태 값을 관리하는 함수
+      - `const [visible, setVisible] = useState(true)`
+  - Context API
+    - 컴포넌트 사이에 공유되는 데이터를 위해 매번 공통 부모 컴포넌트를 수정하고 모든 컴포넌트에 
+      Props를 전달하여 데이터를 사용하는 과정은 비효율적이다. 이처럼 비효율적인 문제를 해결하기 위해 
+      리액트에서는 Flux라는 개념을 도입하였고, 그에 걸맞은 Context API를 제공하기 시작했다.
+    - Context는 부모 컴포넌트로부터 자식 컴포넌트로 전달되는 데이터의 흐름과는 상관없이, 전역적으로
+      사용되는 데이터를 다룬다.
+    - Context를 사용하기 위해서는 Context Api를 사용하여 Context의 프로바이더(Provider)와
+      컨슈머(Consumer)를 생성한다.
+    - Context에 저장된 데이터를 사용하기 위해서는 공통 부모 컴포넌트에 Context의 프로바이더를 사용하여
+      데이터를 제공하다. 그리고 데이터를 사용하려는 컴포넌트에서 Context의 컨슈머를 사용하여 실제
+      데이터를 사용(소비)한다.
+  - AsyncStorage
+    - AsyncStorage는 리액트 네이티브에서 사용할 수 있는 key-value 형식의 저장소이다.
+    - AsyncStorage는 앱 내에서 간단하게 데이터를 저장할 수 있는 저장소이다.
+    - iOS에서는 네이티브 코드로 구현되어 있으며, 안드로이드에서는 네이티브 코드와 SQLite를 기반으로
+      구현되어 있다.
+    - 리액트에서 데이터를 다루는 Props와 State, Context는 휘발성이다. 이 데이터는 메모리에서만 존재하며, 
+      물리적으로 데이터를 저장하지 않는다. 따라서 데이터들은 API를 통해 서버에 저장하여 사용하거나, 앱 내에 
+      저장하여 사용하는 경우가 많다.
+    - 웹에서 사용하는 windows.localStorage와 매우 유사하다.
+    - AsyncStorage는 키 값 저장소로서 간단하게 앱 내에 데이터를 저장하기 위해 사용할 수 있다.
+    - 설치하기</br>
+      `$ yarn add @react-native-community/async-storage`
+      - iOS에서는 다시 pod install 해줘야 한다.</br>
+        ```
+           $ cd ios
+           $ pod install
+        ```
+  - react-navigation
+    - 여러 화면으로 구성된 애플리케이션을 만드려면 내비게이션 관련 서드 파티 라이브러리를 사용해야 한다.
+    - 설치법</br>
+      `$ yarn add @react-navigation/native`
+      - 의존 라이브러리 설치</br>
+        ` yarn add react-native-screens react-native-safe-area-context`
+    - 다양한 내비게이터
+      - Drawer Navigator
+        - 좌측 혹은 우측에 사이드바를 만들고 싶을 때 사용하는 내비게이터이다.
+        - 사이드바를 모바일 앱에서는 드로어라고 부른다.
         - 설치</br>
-        `$ yarn add @react-navigation/bottom-tabs react-native-vector-icons`
-    - Material Top Tab Navigator
-      - 탭을 상단에 위치시킬 수 있다.
-      - 탭을 누르면 구글의 머티리얼 디자인 특유의 물결(ripple) 효과가 나타난다.
-      - 화면을 스와이프하는 형태로 우측/좌측 탭으로 전환할 수도 있다.
-      - 설치</br>
-        `$ yarn add @react-navigation/material-top-tabs react-native-tab-view react-native-paper-view`
-    - Material Bottom Tab Navigator
-      - 설치</br>
-        `$ yarn add @react-navigation/material-bottom-tabs react-native-paper`
-  - 내비게이션 Hooks 
-    - useNavigation
-      - 이 Hook을 사용하면 Screen으로 사용되고 있지 않은 컴포넌트에서도 navigation 객체를 사용할 수 있다.
-      - useNavigation을 사용하면 navigation을 상위 컴포넌트에서 Props로 넣어주지 않아도 사용할 수 있다.
-    - useRoute
-      - useRoute는 useNavigation과 비슷하게, Screen이 아닌 컴포넌트에서 route 객체를 사용할 수 있게 한다.
-    - useFocusEffect
-      - 화면에 포커스가 잡혔을 때 특정 작업을 할 수 있게 하는 Hook이다.
+          `$ yarn install @react-navigation/drawer react-native-gesture-handler react-native-reanimated`
+        - navigation.push, navigation.pop 같은 기능들은 드로어 내비게이터에서 호환되지 않는다.
+      - Bottom Tab Navigator
+        - 하단에 탭을 보여주는 내비게이터이다.
+          - 설치</br>
+          `$ yarn add @react-navigation/bottom-tabs react-native-vector-icons`
+      - Material Top Tab Navigator
+        - 탭을 상단에 위치시킬 수 있다.
+        - 탭을 누르면 구글의 머티리얼 디자인 특유의 물결(ripple) 효과가 나타난다.
+        - 화면을 스와이프하는 형태로 우측/좌측 탭으로 전환할 수도 있다.
+        - 설치</br>
+          `$ yarn add @react-navigation/material-top-tabs react-native-tab-view react-native-paper-view`
+      - Material Bottom Tab Navigator
+        - 설치</br>
+          `$ yarn add @react-navigation/material-bottom-tabs react-native-paper`
+    - 내비게이션 Hooks 
+      - useNavigation
+        - 이 Hook을 사용하면 Screen으로 사용되고 있지 않은 컴포넌트에서도 navigation 객체를 사용할 수 있다.
+        - useNavigation을 사용하면 navigation을 상위 컴포넌트에서 Props로 넣어주지 않아도 사용할 수 있다.
+      - useRoute
+        - useRoute는 useNavigation과 비슷하게, Screen이 아닌 컴포넌트에서 route 객체를 사용할 수 있게 한다.
+      - useFocusEffect
+        - 화면에 포커스가 잡혔을 때 특정 작업을 할 수 있게 하는 Hook이다.
 
 <hr />
 
