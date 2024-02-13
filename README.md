@@ -628,6 +628,13 @@
         - React Native는 컨트롤부터 활동 지시자까지 모든 것을 위한 Core Components들을 가지고 있다.
         - 다음과 같은 Core Components들을 사용할 것이다.<br>
           <img src="front/mobile_applications/react_native/core_components.png">
+    - Using List Views
+      - React Native는 data의 리스트를 표현하기 위해 적합한 component를 제공한다. 일반적으로 FlatList나 SectionList
+        중에서 사용할 수 있다.
+      - FlatList component는 데이터의 변화의 scrolling list를 보여준다.
+      - FlatList component는 data와 renderItem이라는 2가지 props를 필요로 한다.
+        - data는 리스트의 정보의 소스이다.
+        - renderItem은 소스로부터 하나의 항목을 가져와 렌더링할 형식이 지정된 구성 요소를 반환한다.
 - Components
 - APIs
 - Architecture
