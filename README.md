@@ -618,22 +618,36 @@
 
 ### Mobile Applications
 #### React Native
-- Component
-  - 유저 인터페이스를 구성하는 요소
-  - 컴포넌트 생성
-    - ```
-      const App = () => { 
-        return (
-          <SafeAreaView>
-          </SafeAreaView>
-      )} 
-      ```
-    - Props(Properties)를 설정하여 컴포넌트에 전달할 수 있다.
-    - JSX 문법
-      - 태그를 열면 반드시 닫아주기 `<Text></Text>`
-      - 스스로 닫는 태그 사용하기   `<Text />`
-      - 반환할 때 반드시 하나의 태그로 감싸기
-      - JSX 안에서 자바스크립트 표현식을 보여줄 땐 중괄호 사용
+- Guides
+  - The Basics
+    - Core Components and Native Components
+      - Native Components
+        - React Native 구성 요소는 Android 및 iOS와 동일한 보기로 지원되므로 React Native 앱은 다른 앱과 마찬가지로
+          모양, 느낌, 성능이 동일하다. 이러한 플랫 폼 지원 구성 요소를 Native Components라고 부른다.
+      - Core Components
+        - React Native는 컨트롤부터 활동 지시자까지 모든 것을 위한 Core Components들을 가지고 있다.
+        - 다음과 같은 Core Components들을 사용할 것이다.<br>
+          <img src="front/mobile_applications/react_native/core_components.png">
+- Components
+- APIs
+- Architecture
+- 기타
+  - Component
+    - 유저 인터페이스를 구성하는 요소
+    - 컴포넌트 생성
+      - ```
+        const App = () => { 
+          return (
+            <SafeAreaView>
+            </SafeAreaView>
+        )} 
+        ```
+      - Props(Properties)를 설정하여 컴포넌트에 전달할 수 있다.
+      - JSX 문법
+        - 태그를 열면 반드시 닫아주기 `<Text></Text>`
+        - 스스로 닫는 태그 사용하기   `<Text />`
+        - 반환할 때 반드시 하나의 태그로 감싸기
+        - JSX 안에서 자바스크립트 표현식을 보여줄 땐 중괄호 사용
 - react-native component
   - SafeAreaView
     - iPhone X 이상 기종에서 디스플레이의 보이지 않는 영역 및 최하단 영역에 내용이 보여지는 것을
