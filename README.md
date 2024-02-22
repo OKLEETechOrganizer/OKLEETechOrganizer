@@ -635,6 +635,19 @@
       - FlatList component는 data와 renderItem이라는 2가지 props를 필요로 한다.
         - data는 리스트의 정보의 소스이다.
         - renderItem은 소스로부터 하나의 항목을 가져와 렌더링할 형식이 지정된 구성 요소를 반환한다.
+  - UI & Interaction
+    - style
+      - 모든 core components는 style이라는 prop을 채택한다. style은 CSS가 웹에서 작동하는 것과
+        camel case로 작성되는 것 빼고는 거의 매칭된다. 
+    - Height and Width
+      - Fixed Dimensions
+        - 컴포넌트의 차원을 세팅하는 일반적인 방법은 width와 height를 고정하여 style에 더하는 것이다.
+      - Flex Dimensions
+        - 사용 가능한 공간에 따라 컴포넌트를 동적으로 확장이나 축소를 하려면 컴포넌트 스타일에 flex를 사용하면 된다.
+        - 일반적으로 flex: 1을 사용하게 될 것인데, 이는 컴포넌트가 사용가능한 공간을 채우게 지시한다. 또한, 동일한
+          부모 컴포넌트를 가진 다른 컴포넌트 사이에서 공유가능하게 한다.
+        - 주어진 flex가 클수록 형제에 비해 공간을 차지하는 비율이 커지게 된다.
+      - Percent Dimensions
 - Components
 - APIs
 - Architecture
