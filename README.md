@@ -648,6 +648,18 @@
           부모 컴포넌트를 가진 다른 컴포넌트 사이에서 공유가능하게 한다.
         - 주어진 flex가 클수록 형제에 비해 공간을 차지하는 비율이 커지게 된다.
       - Percent Dimensions
+    - Layout with Flexbox
+      - Flex
+        - flex는 main 축을 따라 사용 가능한 공간을 따라 어떻게 채울 것인지 정의한다.
+      - Flex Direction
+        - flexDirection은 노드의 자식이 배치되는 방향을 지시한다.
+      - Justify Content
+        - flex-start(default value)
+        - flex-end
+        - center
+        - space-between
+        - space-around
+        - space-evenly
 - Components
 - APIs
 - Architecture
