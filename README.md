@@ -660,6 +660,14 @@
         - space-between
         - space-around
         - space-evenly
+      - Align Items
+        - alignItems는 교차축에 따라 자식들을 정렬하는 것을 지시한다. justifyContents와 유사하지만 주축에 적용하는 대신
+          교차축에 적용된다.
+        - stretch(default value)
+        - flex-start
+        - flex-end
+        - center
+        - baseline
 - Components
 - APIs
 - Architecture
