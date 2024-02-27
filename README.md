@@ -668,6 +668,63 @@
         - flex-end
         - center
         - baseline
+    - Interaction
+      - Navigating Between Screens
+        - React Navigation
+          - Installation and setup
+            - 먼저, 프로젝트에 다음과 같이 인스톨한다.
+              ``` 
+                $ npm install @react-navigation/native @react-navigation/native-stack
+              ```
+            - 다음으로, 피어 종속성을 설치한다.
+              ```
+                $ npm install react-native-screens react-native-safe-area-context
+              
+                react-native 프로젝트에 CocoaPods가 설치되어 있는지 확인하고 다음 명령어를 실핸한다.
+                $ cd ios
+                $ pod install
+                $ cd ..
+              ```
+            - 이제, 전체 app을 NavigationContainer으로 감쌀 필요가 있다. 종종 엔트리 파일인 index.js나 App.js에
+              작업을 할 것이다.
+              ```
+                import * as React from 'react';
+                import {NavigationContainer} from '@react-navigation/native';
+                
+                const App = () => {
+                   return (
+                      <NavigationContainer>
+                         {/* Rest of your app code */}
+                      </NavigationContainer>
+                   );
+                };
+                
+                export default App;
+              ```
+          - Usage
+            - 이제, 다음과 같이 home screen과 profile screen을 만들 수 있다.
+              ```
+                import * as React from 'react';
+                import {NavigationContainer} from '@react-navigation/native';
+                import {createNativeStackNavigator} from '@react-navigation/native-stack';
+                
+                const Stack = createNativeStackNavigator();
+                
+                const MyStack = () => {
+                   return (
+                      <NavigationContainer>
+                         <Stack.Navigator>
+                            <Stack.Screen
+                               name="Home"
+                               component={HomeScreen}
+                               options={{title: 'Welcome'}}
+                            />
+                            <Stack.Screen name="Profile" component={ProfileScreen} />
+                         </Stack.Navigator>
+                      </NavigationContainer>
+                   );
+                };
+              ```
 - Components
 - APIs
 - Architecture
