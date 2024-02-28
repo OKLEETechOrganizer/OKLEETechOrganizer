@@ -725,6 +725,14 @@
                    );
                 };
               ```
+    - Networking
+      - Using Fetch
+        - Making requests
+        - Handling the response
+      - Using Other Networking Libraries
+      - WebSocket Support
+  - Debugging
+  - Testing
 - Components
 - APIs
 - Architecture
