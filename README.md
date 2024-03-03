@@ -734,6 +734,35 @@
   - Debugging
   - Testing
 - Components
+  - Core Components
+    - Core Components and APIs
+      - Basic Components
+        - View
+        - Text
+        - Image
+        - TextInput
+        - ScrollView
+        - StyleSheet
+      - User Interface
+        - Button
+        - Switch
+      - List Views
+        - FlatList
+        - SectionList
+      - Android-specific
+        - BackHandler
+        - DrawerLayoutAndroid
+        - PermissionsAndroid
+        - ToastAndroid
+      - iOS-specific
+        - ActionSheetIOS
+      - Others
+    - ActivityIndicator
+      - 원형 로딩 표시기를 보여준다.
+    - Button
+    - FlatList
+  - Android Components
+  - iOS Components
 - APIs
 - Architecture
 - 기타
