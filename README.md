@@ -768,6 +768,10 @@
     - KeyboardAvoidingView
       - 이 컴포넌트는 가상 키보드가 표시되는 동안 계속 보이도록 키보드의 높이를 기준으로 하여 자동적으로 높이, 위치, 
         하단 padding을 조정한다.
+    - Modal
+      - modal 컴포넌트는 둘러쌓인 view 위로 컨텐츠를 보여줄 수 있는 기본적인 방법이다.
+    - Pressable
+      - 정의된 children의 press 상호작용을 다양한 단계로 탐지할 수 있는 코어 컴포넌트 wrapper이다.
   - Android Components
   - iOS Components
 - APIs
