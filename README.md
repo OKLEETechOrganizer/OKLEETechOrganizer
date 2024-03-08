@@ -777,7 +777,20 @@
   - Android Components
   - iOS Components
 - APIs
+  - APIs
+    - Alert
+    - Appearance
+    - Keyboard
+    - Linking
+    - StyleSheet
+    - Vibration
+  - Hooks
+  - Android APIs
+  - iOS APIs
 - Architecture
+  - Architecture
+  - Rendering
+  - Build Tools 
 - 기타
   - Component
     - 유저 인터페이스를 구성하는 요소
