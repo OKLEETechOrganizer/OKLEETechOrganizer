@@ -545,61 +545,66 @@
 ### Server Side Rendering
 #### Next.js
 - App Router 버전
-  - Project Structure
-    - App Routing Conventions
-      - Routing Files
-        - layout
-          -  세그먼트 및 해당 하위 항목에 대한 공유 UI
-        - page
-          - 경로의 고유한 UI 및 경로에 공개적으로 액세스 가능
-        - template
-          - Re-rendered layout
-  - 라우팅 
-    - 버전13에서 Next.js는 공유 레이아웃, 중첩 라우팅, 로딩 상태, 오류 처리 등을 지원하는 React Server Components를 기반으로 
-      구축된 새로운 App Router를 도입하였다.
-    - Redirecting
-      - Next에서 redirect를 핸들링하는 몇 가지 방법이 있다.
-        <img src="front/server_side_rendering/next/redirecting.png">
-    - Middleware
-      - Matching paths
-        - 미들웨어는 프로젝트의 모든 루트에서 호출된다. 실행순서는 다음과 같다.
-          <img src="front/server_side_rendering/next/matching_paths.png">
-      - NextResponse
-        - NextResponse API는 다음과 같은 일을 수행할 수 있다.
-          - 다른 URL으로 들어오는 요청을 redirect
-          - 주어진 URL을 표시한 응답을 rewrite
-          - API Routes, getServerSideProps, rewrite destination에 대해 request headers를 설정할 수 있다.
-          - 응답 쿠키를 설정
-          - 응답 헤더를 설정
-  - Data Fetching
-    - Server Actions and Mutations
-      - Server Actions는 서버에서 실행되는 비동기적 함수들을 말한다. 이것들은 서버 및 클라이언트 구성 요소에서 Next.js 애플리케이션의 
-        양식 제풀 및 데이터 변형을 처리하는 데 사용할 수 있다.
-      - Convention
-        - server action은 리액트의 "use server" 지시문을 통해 정의될 수 있다. async function의 상단에 지시문을 배치하여 해당
-          기능을 서버 작업으로 표시하거나 별도의 파일 상단에 배치하여 해당 파일의 모든 내보내기를 서버 작업으로 표시할 수 있다.
-  - 렌더링
-    - 서버 컴포넌트
-      - 정적 렌더링의 경우 라우트는 빌드 시 렌더링 되거나 데이터 재검증 후 백그라운드에서 렌더링 된다.
-      - 동적 렌더링은 요청 시점에 렌더링 된다. 사용자 맞춤 데이터가 있거나 쿠키, URL searchParam과 같이 요청 시점에 알 수 있는 정보가 있는 경우 유용하다.
-    - 클라이언트 컴포넌트
-      - 클라이언트 컴포넌트는 state, effect, event listener를 사용할 수 있다.
-      - 브라우저 API (ex.window, localStorage ...) 사용 가능하다.
-  - File Conventions
-    - page.js
-      - route에 유일한 UI이다.
-      - props
-        - params
-          - 루트 세그먼트부터 해당 페이지까지의 동적 경로 매개변수를 포함하는 객체이다
-            <img src="front/server_side_rendering/next/params.png">
-        - searchParams
-          - 검색 매개변수를 포함하는 객체
-            <img src="front/server_side_rendering/next/search_params.png">
-  - next.config.js Options
-    - rewrites
-      - Rewrites는 request path를 다른 destination path로 매핑시킬 수 있게 한다.
-  - Edge Runtime
-    - Next.js의 Edge Runtime은 표준 Web API를 근간으로 한다.
+  - Getting Started
+    - Installation
+    - Project Structure
+      - App Routing Conventions
+        - Routing Files
+          - layout
+            -  세그먼트 및 해당 하위 항목에 대한 공유 UI
+          - page
+            - 경로의 고유한 UI 및 경로에 공개적으로 액세스 가능
+          - template
+            - Re-rendered layout
+  - Building Your Application
+    - 라우팅 
+      - 버전13에서 Next.js는 공유 레이아웃, 중첩 라우팅, 로딩 상태, 오류 처리 등을 지원하는 React Server Components를 기반으로 
+        구축된 새로운 App Router를 도입하였다.
+      - Redirecting
+        - Next에서 redirect를 핸들링하는 몇 가지 방법이 있다.
+          <img src="front/server_side_rendering/next/redirecting.png">
+      - Middleware
+        - Matching paths
+          - 미들웨어는 프로젝트의 모든 루트에서 호출된다. 실행순서는 다음과 같다.
+            <img src="front/server_side_rendering/next/matching_paths.png">
+        - NextResponse
+          - NextResponse API는 다음과 같은 일을 수행할 수 있다.
+            - 다른 URL으로 들어오는 요청을 redirect
+            - 주어진 URL을 표시한 응답을 rewrite
+            - API Routes, getServerSideProps, rewrite destination에 대해 request headers를 설정할 수 있다.
+            - 응답 쿠키를 설정
+            - 응답 헤더를 설정
+    - Data Fetching
+      - Server Actions and Mutations
+        - Server Actions는 서버에서 실행되는 비동기적 함수들을 말한다. 이것들은 서버 및 클라이언트 구성 요소에서 Next.js 애플리케이션의 
+          양식 제풀 및 데이터 변형을 처리하는 데 사용할 수 있다.
+        - Convention
+          - server action은 리액트의 "use server" 지시문을 통해 정의될 수 있다. async function의 상단에 지시문을 배치하여 해당
+            기능을 서버 작업으로 표시하거나 별도의 파일 상단에 배치하여 해당 파일의 모든 내보내기를 서버 작업으로 표시할 수 있다.
+    - 렌더링
+      - 서버 컴포넌트
+        - 정적 렌더링의 경우 라우트는 빌드 시 렌더링 되거나 데이터 재검증 후 백그라운드에서 렌더링 된다.
+        - 동적 렌더링은 요청 시점에 렌더링 된다. 사용자 맞춤 데이터가 있거나 쿠키, URL searchParam과 같이 요청 시점에 알 수 있는 정보가 있는 경우 유용하다.
+      - 클라이언트 컴포넌트
+        - 클라이언트 컴포넌트는 state, effect, event listener를 사용할 수 있다.
+        - 브라우저 API (ex.window, localStorage ...) 사용 가능하다.
+  - Api Reference
+    - File Conventions
+      - page.js
+        - route에 유일한 UI이다.
+        - props
+          - params
+            - 루트 세그먼트부터 해당 페이지까지의 동적 경로 매개변수를 포함하는 객체이다
+              <img src="front/server_side_rendering/next/params.png">
+          - searchParams
+            - 검색 매개변수를 포함하는 객체
+              <img src="front/server_side_rendering/next/search_params.png">
+    - next.config.js Options
+      - rewrites
+        - Rewrites는 request path를 다른 destination path로 매핑시킬 수 있게 한다.
+    - Edge Runtime
+      - Next.js의 Edge Runtime은 표준 Web API를 근간으로 한다.
+  - Architecture
 - Pages Router 버전
   - getServerSideProps
     - next.js의 내장 함수로서, URL에서 동적으로 변수값을 가져올 수 있게 한다.
