@@ -563,6 +563,7 @@
       - Redirecting
         - Next에서 redirect를 핸들링하는 몇 가지 방법이 있다.
           <img src="front/server_side_rendering/next/redirecting.png">
+      - Route Handlers
       - Middleware
         - Matching paths
           - 미들웨어는 프로젝트의 모든 루트에서 호출된다. 실행순서는 다음과 같다.
@@ -574,6 +575,12 @@
             - API Routes, getServerSideProps, rewrite destination에 대해 request headers를 설정할 수 있다.
             - 응답 쿠키를 설정
             - 응답 헤더를 설정
+        - Using Cookies
+          - Cookies는 일반 헤더이다. 요청 시 쿠키 헤더에 저장된다. 응답시에는 Set-Cookie에 있다.
+            Next.js는 cookies를 확장한 NextRequest와 NextResponse를 통해 cookies에 접근하고 조작할 수 있는 편리한 방법을 제공한다.
+          - 요청이 들어오는 경우, cookies는 다음 method와 함께 들어온다: get, getAll, set 그리고 delete cookies
+            has를 통해 cookie가 존재하는지 체크할 수 있고, clear를 통해 모든 cookie를 제거할 수 있다.
+          - 응답이 나가는 경우, cookie는 다음 method와 함께 작동한다: get, getAll, set 그리고 delete
     - Data Fetching
       - Server Actions and Mutations
         - Server Actions는 서버에서 실행되는 비동기적 함수들을 말한다. 이것들은 서버 및 클라이언트 구성 요소에서 Next.js 애플리케이션의 
