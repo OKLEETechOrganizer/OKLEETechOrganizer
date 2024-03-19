@@ -1000,6 +1000,21 @@
     ```
 - OVERVIEW
   - Controllers
+    - Routing
+      - @Controller()는 기본 컨트롤러를 정의하는데 필요한 decorator이다. 
+      - ```
+        import { Controller, Get } from '@nestjs/common';
+
+        @Controller('cats')
+        export class CatsController {
+           @Get()
+           findAll(): string {
+              return 'This action returns all cats';
+           }
+        }
+        ```
+      - findAll() method 앞의 @Get() HTTP request mehthod decorator는 Nest에게 HTTP request에게 특정 엔드포인트에 대한
+        핸들러를 만들라고 지시한다. 
     - Request object
       - 아래는 제공된 데코레이터들의 리스트와 일반적인 object 들이다.
       <img src="back/frameworkbackend/nestjs/request_object.png">
