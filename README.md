@@ -1018,6 +1018,19 @@
     - Request object
       - 아래는 제공된 데코레이터들의 리스트와 일반적인 object 들이다.
       <img src="back/frameworkbackend/nestjs/request_object.png">
+    - Status code
+      - 응답 상태 코드는 POST 요청인 201을 제외하고는 기본적으로 항상 200이다. 핸들러 레벨에서 @HttpCode(...) 데코레이터를 추가하여
+        동작을 쉽게 바꿀 수 있다.
+      - ```
+        @Post()
+        @HttpCode(204)
+           create() {
+           return 'This action adds a new cat';
+        }
+        ```
+  - Providers
+    - Providers는 Nest의 기본적인 컨셉이다. 기본 Nest 클래스 중 상당수(services, repositories, factories, helpers 등) 이 Provider
+      로 취급된다. 
 - 기타
   - 익스프레스와 NestJS 비교
     <img alt="Component_lifecycle_method_flow" src="back/frameworkbackend/nestjs/express_vs_nestjs.png">
