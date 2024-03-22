@@ -909,6 +909,8 @@
       - useFocusEffect
         - 화면에 포커스가 잡혔을 때 특정 작업을 할 수 있게 하는 Hook이다.
 
+<hr />
+
 #### Swift
 - 애플의 iOS, macOS 드 자사의 제품 개발에 활용하는 프로그래밍 언어
 - 언어적 특성
@@ -920,6 +922,21 @@
     `var [변수명]: [데이터 타입] = [값]` 형태로 선언하며, 데이터 타입은 생략 가능
   - let : 상수 키워드
     `let [상수명]: [데이터 타입] = [값]`
+
+<hr />
+
+#### Storybook
+- Guides
+  - Get started
+    - Get started with Storybook
+      - What is Storybook?
+        - Storybook은 독립적으로 UI component와 page를 구축하기 위한 프론트엔드 workshop 이다.
+    - Why Storybook?
+    - Frameworks
+      - Next.js
+      - React & Webpack
+  - Testing
+- Tutorials
 
 <hr />
 
