@@ -430,6 +430,68 @@
         선택기를 사용하여 렌더링 최적화를 수동으로 적용하는 것이 좋다.
 <hr />
 
+### Writing CSS
+#### Tailwind
+- GETTING STARTED
+  - Installation
+    - Installing Tailwind CSS as PostCSS plugin
+      - Install Tailwind via npm
+        - `npm install -D tailwindcss@latest postcss@latest autoprefixer@latest`
+      - Add Tailwind as a PostCSS plugin
+        - ```
+          // postcss.config.js
+          module.exports = {
+             plugins: {
+                tailwindcss: {},
+                autoprefixer: {},
+             }
+          }
+          ```
+      - Create your configuration file
+        - `npx tailwindcss init`
+        - ```
+          // tailwind.config.js
+          module.exports = {
+             purge: [],
+             darkMode: false, // or 'media' or 'class'
+             theme: {
+                extend: {},
+             },
+             variants: {},
+             plugins: [],
+          }
+          ```
+      - Include Tailwind in your CSS
+        - ```
+          /* ./your-css-folder/styles.css */
+          @tailwind base;
+          @tailwind components;
+          @tailwind utilities;
+          ```
+      - Building your CSS
+        - ```
+            // tailwind.config.js
+            module.exports = {
+               purge: [
+                  './src/**/*.html',
+                  './src/**/*.js',
+               ],
+               darkMode: false, // or 'media' or 'class'
+               theme: {
+                  extend: {},
+               },
+               variants: {},
+               plugins: [],
+            }
+          ```
+- CORE CONCEPTS
+- CUSTOMIZATION
+- BASE STYLES
+- LAYOUT
+- FLEXBOX AND GRID
+
+<hr />
+
 ### Type Checkers
 #### TypeScript
 - Object Types
