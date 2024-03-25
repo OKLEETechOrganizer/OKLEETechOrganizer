@@ -1110,6 +1110,11 @@
   - Providers
     - Providers는 Nest의 기본적인 컨셉이다. 기본 Nest 클래스 중 상당수(services, repositories, factories, helpers 등) 이 Provider
       로 취급된다. 
+  - Modules
+    - module은 @Module() 데코레이터로 주석이 달린 클래스이다. @Module()은 Nest가 어플리케이션 구조를 구성하는데 사용하는 메타데이터를 제공한다.
+      각각의 어플리케이션은 적어도 하나의 module을 지니는데 root module이다. root module은 Nest가 어플리케이션 그래프(Nest가 모듈과 공급자의 
+      관계 및 의존성을 해결하는데 사용하는 내부 데이터 구조)를 구성하기 위해 사용하는
+      시작점이다.
 - 기타
   - 익스프레스와 NestJS 비교
     <img alt="Component_lifecycle_method_flow" src="back/frameworkbackend/nestjs/express_vs_nestjs.png">
