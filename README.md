@@ -238,6 +238,14 @@
     
     export { add };
     ```
+- 클래스형 컴포넌트와 함수형 컴포넌트  
+
+| 기능      | 클래스형 컴포넌트      | 함수형 컴포넌트  |  
+|---------|----------------|-----------|
+| state   | 사용 가능          | 사용 불가능    |
+| 라이프 사이클 | 라이프 사이클 API 사용 | hooks 사용  |
+| 자원 사용   | 비교적 많이 사용      | 비교적 적게 사용 |
+
 - JSX 코드는 브라우저에서는 직접 해석할 수 없으므로, 웹팩에 의해 자바스크립트 코드로 변환된다.
   이때, JSX로 구현된 컴포넌트는 자바스크립트의 객체로 표현된다. 변환된 자바스크립트 코드를
   브라우저가 읽어서 실행하고 화면을 그리기 시작한다.
@@ -382,6 +390,20 @@
       - 사이드 이펙트 방지를 위해 사용
       - API 통신(data fetch), 이벤트 리스너 추가, DOM 업데이트 등
       - useEffect(()=>{...}); 함수 호출을 통해, 실행한다
+- default props & default parameter
+  - 리액트 18.2 버전까지 방식 deprecated
+    ```
+    const GreetComponent = ({ name, age }) => (
+      <div>{`Hello, my name is ${name}, ${age}`}</div>
+    );
+    GreetComponent.defaultProps = {name: 'oklee', age: 25};
+    ```
+  - 리액트 18.3 버전 이후
+    ```
+    const GreetComponent = ({ name = 'oklee', age = 25 }) => (
+      <div>{`Hello, my name is ${name}, ${age}`}</div>
+    );
+    ```
 - 컴포넌트 스타일링
   - 일반 CSS
   - Sass
