@@ -494,30 +494,57 @@
 
 ### Type Checkers
 #### TypeScript
-- Object Types
-  - Property Modifiers
-    - Optional Properties
-    - readonly Properties
-    - Index Signatures
-      - 유형 속성의 모든 이름은 모르지만, type을 알고 있는 경우에 사용할 수 있다.
-        <img src="front/type_checkers/typescript/index_signatures_1.png">
-- Type Manipulation
-  - Generics
-    ```
-    1. 제네릭을 사용하지 않는 경우
-    function identity(arg: number): number {
-      return arg;
-    }
-    function identity(arg: any): any {
-      return arg;
-    }
+- Get Started
+  - TypeScript for JavaScript Programmers
+    - 타입 추론
+      - 타입스크립트는 자바스크립트 언어를 알고 있으며 대부분의 경우 타입을 생성해준다. 예를 들어 변수를 생성하면서
+        동시에 특정 값에 할당하는 경우, 타입스크립트는 그 값을 해당 변수의 타입으로 사용할 것이다.
+    - 타입 정의
+      - 자바스크립트는 클래스와 객체 지향 프로그래밍을 지원하기 때문에, 타입스크립트 또한 동일하다 - 인터페이스는 클래스로도
+        선언할 수 있다.
+      - ```
+          interface User {
+            name: string;
+            id: number;
+          }
+        
+          class UserAccount {
+            name: string;
+            id: number;
+        
+            constructor(name: string, id: number) {
+              this.name = name;
+              this.id = id;
+            }
+          }
+        
+          const user: User = new UserAccount("Murphy", 1);
+        ```
+- Handbook
+  - Object Types
+    - Property Modifiers
+      - Optional Properties
+      - readonly Properties
+      - Index Signatures
+        - 유형 속성의 모든 이름은 모르지만, type을 알고 있는 경우에 사용할 수 있다.
+          <img src="front/type_checkers/typescript/index_signatures_1.png">
+  - Type Manipulation
+    - Generics
+      ```
+      1. 제네릭을 사용하지 않는 경우
+      function identity(arg: number): number {
+        return arg;
+      }
+      function identity(arg: any): any {
+        return arg;
+      }
     
     
-    2. 제네릭을 사용하는 경우
-    function identity<Type>(arg: Type): Type {
-      return arg;
-    }
-    ```
+      2. 제네릭을 사용하는 경우
+      function identity<Type>(arg: Type): Type {
+        return arg;
+      }
+      ```
 - 기타
   - 변수 선언하는 방식은 다음과 같다.
     ```
