@@ -84,16 +84,16 @@
         - Routing
             - @Controller()는 기본 컨트롤러를 정의하는데 필요한 decorator이다.
             - ```
-        import { Controller, Get } from '@nestjs/common';
-
-        @Controller('cats')
-        export class CatsController {
-           @Get()
-           findAll(): string {
-              return 'This action returns all cats';
-           }
-        }
-        ```
+              import { Controller, Get } from '@nestjs/common';
+      
+              @Controller('cats')
+              export class CatsController {
+                 @Get()
+                 findAll(): string {
+                    return 'This action returns all cats';
+                 }
+              }
+              ```
             - findAll() method 앞의 @Get() HTTP request mehthod decorator는 Nest에게 HTTP request에게 특정 엔드포인트에 대한
               핸들러를 만들라고 지시한다.
         - Request object
@@ -103,12 +103,12 @@
             - 응답 상태 코드는 POST 요청인 201을 제외하고는 기본적으로 항상 200이다. 핸들러 레벨에서 @HttpCode(...) 데코레이터를 추가하여
               동작을 쉽게 바꿀 수 있다.
             - ```
-        @Post()
-        @HttpCode(204)
-           create() {
-           return 'This action adds a new cat';
-        }
-        ```
+              @Post()
+              @HttpCode(204)
+                 create() {
+                 return 'This action adds a new cat';
+              }
+              ```
     - Providers
         - Providers는 Nest의 기본적인 컨셉이다. 기본 Nest 클래스 중 상당수(services, repositories, factories, helpers 등) 이 Provider
           로 취급된다.
