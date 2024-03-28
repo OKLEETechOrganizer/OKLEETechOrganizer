@@ -64,9 +64,9 @@
                         - 반면 "private"은 응답이 단일 사용자만을 위한 것이며 공유 캐시에 의해 저장되어서는 안된다는 것을 가리킨다.
                           사설 브라우저 캐시는 이런 경우에 응답을 저장할 수 있다.
                         - ```
-              Cache-Control: private
-              Cache-Control: public
-              ```
+                          Cache-Control: private
+                          Cache-Control: public
+                          ```
                     - 만료
                         - `Cache-Control: max-age=31536000`
                 - Pragma 헤더
@@ -113,16 +113,16 @@
                 - Lexical scoping
                     - 다음 예시 코드를 살펴보자.
                     - ```
-            function init() {
-               var name = "Mozilla"; // name is a local variable created by init
-               function displayName() {
-                  // displayName() is the inner function, that forms the closure
-                  console.log(name); // use variable declared in the parent function
-               }
-               displayName();
-               }
-            init();
-            ```
+                      function init() {
+                         var name = "Mozilla"; // name is a local variable created by init
+                         function displayName() {
+                            // displayName() is the inner function, that forms the closure
+                            console.log(name); // use variable declared in the parent function
+                         }
+                         displayName();
+                         }
+                      init();
+                      ```
                     - init()은 로컬 변수인 name과 displayName()이라는 함수를 만들었다. displayName() 함수는
                       init() 안에 정의되어 있고, init() 함수 안에서만 유효하다. displayName() 함수에는 지역변수가 없다.
                       그러나, 내부 함수는 외부 함수의 변수에 접근할 수 있으므로, displayName()은 부모 함수인 init()에 선언된
@@ -136,38 +136,38 @@
                           변수 선언을 var로 했을 시, 함수 내부냐 외부냐에 따라 function-scope, global-scope로 나뉘어졌다. 중괄호가 있는 블록은
                           scope를 생성하지 않기 때문에 다루기가 까다롭다.
                         - ```
-              if (Math.random() > 0.5) {
-                var x = 1;
-              } else {
-                var x = 2;
-              }
-              console.log(x);
-              ```
+                          if (Math.random() > 0.5) {
+                            var x = 1;
+                          } else {
+                            var x = 2;
+                          }
+                          console.log(x);
+                          ```
                         - 블록이 scope를 생성하는 다른 언어(C, JAVA 등) 사용자의 경우, 두 블록 모두에서 x의 범위를 벗어나기 때문에 위 코드에서 console.log는 에러를 낸다.
                           그러나, 블록은 var에 대한 scope를 생성하지 않기 때문에, 여기의 var 문은 전역 변수를 생성한다.
                         - ES6에서는 temporal dead zones과 같은 block-scope를 생성할 수 있는 let과 const 선언문을 소개하고 있다.
                         - ```
-              if (Math.random() > 0.5) {
-                const x = 1;
-              } else {
-                const x = 2;
-              }
-              console.log(x); // ReferenceError: x is not defined
-              ```
+                          if (Math.random() > 0.5) {
+                            const x = 1;
+                          } else {
+                            const x = 2;
+                          }
+                          console.log(x); // ReferenceError: x is not defined
+                          ```
                 - Closure
                     - 다음 예시 코드를 확인하자.
                     - ```
-            function makeFunc() {
-              const name = "Mozilla";
-              function displayName() {
-                console.log(name);
-              }
-              return displayName;
-              }
-            
-            const myFunc = makeFunc();
-            myFunc();
-            ```
+                      function makeFunc() {
+                        const name = "Mozilla";
+                        function displayName() {
+                          console.log(name);
+                        }
+                        return displayName;
+                        }
+                      
+                      const myFunc = makeFunc();
+                      myFunc();
+                      ```
 - Guides
 - 기타
     - 일반 함수과 화살표 함수에서 this의 차이
@@ -218,17 +218,17 @@
             - 프로미스를 사용하는 비동기 작업을 동기적으로 처리하는 것처럼 코드를 작성할 수 있다.
             - async가 붙어 있는 함수를 실행할 때 await 키워드를 사용하여 비동기 작업이 완료될 때까지 기다릴 수 있다.
             - ```
-        async function myName() {
-          return "Andy";
-        }
-      
-        async function showName() {
-          const name = await myName(); // await는 promise 객체인 myName() 함수의 실행이 끝나길 기다린다.
-          console.log(name);
-        }
-      
-        console.log(showName());
-        ```
+              async function myName() {
+                return "Andy";
+              }
+            
+              async function showName() {
+                const name = await myName(); // await는 promise 객체인 myName() 함수의 실행이 끝나길 기다린다.
+                console.log(name);
+              }
+            
+              console.log(showName());
+              ```
     - 전개 연산자(...문법)를 사용하여 객체나 배열 내부의 값을 복사할 때는 얕은 복사를 하게 된다. 즉, 내부의
       값이 완전히 새로 복사되는 것이 아니라 가장 바깥쪽에 있는 값만 복사된다. 따라서 내부의 값이 객체 혹은
       배열이라면 내부의 값 또한 따로 복사해 주어야 한다.
@@ -526,51 +526,51 @@
                 - `npm install -D tailwindcss@latest postcss@latest autoprefixer@latest`
             - Add Tailwind as a PostCSS plugin
                 - ```
-          // postcss.config.js
-          module.exports = {
-             plugins: {
-                tailwindcss: {},
-                autoprefixer: {},
-             }
-          }
-          ```
+                  // postcss.config.js
+                  module.exports = {
+                     plugins: {
+                        tailwindcss: {},
+                        autoprefixer: {},
+                     }
+                  }
+                  ```
             - Create your configuration file
                 - `npx tailwindcss init`
                 - ```
-          // tailwind.config.js
-          module.exports = {
-             purge: [],
-             darkMode: false, // or 'media' or 'class'
-             theme: {
-                extend: {},
-             },
-             variants: {},
-             plugins: [],
-          }
-          ```
+                  // tailwind.config.js
+                  module.exports = {
+                     purge: [],
+                     darkMode: false, // or 'media' or 'class'
+                     theme: {
+                        extend: {},
+                     },
+                     variants: {},
+                     plugins: [],
+                  }
+                  ```
             - Include Tailwind in your CSS
                 - ```
-          /* ./your-css-folder/styles.css */
-          @tailwind base;
-          @tailwind components;
-          @tailwind utilities;
-          ```
+                  /* ./your-css-folder/styles.css */
+                  @tailwind base;
+                  @tailwind components;
+                  @tailwind utilities;
+                  ```
             - Building your CSS
                 - ```
-            // tailwind.config.js
-            module.exports = {
-               purge: [
-                  './src/**/*.html',
-                  './src/**/*.js',
-               ],
-               darkMode: false, // or 'media' or 'class'
-               theme: {
-                  extend: {},
-               },
-               variants: {},
-               plugins: [],
-            }
-          ```
+                    // tailwind.config.js
+                    module.exports = {
+                       purge: [
+                          './src/**/*.html',
+                          './src/**/*.js',
+                       ],
+                       darkMode: false, // or 'media' or 'class'
+                       theme: {
+                          extend: {},
+                       },
+                       variants: {},
+                       plugins: [],
+                    }
+                  ```
 - CORE CONCEPTS
 - CUSTOMIZATION
 - BASE STYLES
@@ -604,23 +604,23 @@
             - 자바스크립트는 클래스와 객체 지향 프로그래밍을 지원하기 때문에, 타입스크립트 또한 동일하다 - 인터페이스는 클래스로도
               선언할 수 있다.
             - ```
-          interface User {
-            name: string;
-            id: number;
-          }
-        
-          class UserAccount {
-            name: string;
-            id: number;
-        
-            constructor(name: string, id: number) {
-              this.name = name;
-              this.id = id;
-            }
-          }
-        
-          const user: User = new UserAccount("Murphy", 1);
-        ```
+                interface User {
+                  name: string;
+                  id: number;
+                }
+              
+                class UserAccount {
+                  name: string;
+                  id: number;
+              
+                  constructor(name: string, id: number) {
+                    this.name = name;
+                    this.id = id;
+                  }
+                }
+              
+                const user: User = new UserAccount("Murphy", 1);
+              ```
 - Handbook
     - Object Types
         - Property Modifiers
@@ -666,21 +666,21 @@
         - 구조적 타이핑
             - 이름으로 타입을 구분하는 명목적인 타입 언어의 특징과 달리 타입스크립트는 구조로 타입을 구분
             - ```
-        interface Cartoon {
-          price: number;
-        }
-      
-        interface Novel {
-          price: number;
-        }
-      
-        let cartoon: Cartoon = { price: 3000 };
-        let novel: Novel = { price: 12000 };
-      
-        cartoon = novel;
-        novel = cartoon;
-        // 타입이 서로 호환된다.
-        ```
+              interface Cartoon {
+                price: number;
+              }
+            
+              interface Novel {
+                price: number;
+              }
+            
+              let cartoon: Cartoon = { price: 3000 };
+              let novel: Novel = { price: 12000 };
+            
+              cartoon = novel;
+              novel = cartoon;
+              // 타입이 서로 호환된다.
+              ```
         - 구조적 서브타이핑
             - 객체의 프로퍼티를 바탕으로 타입을 구분
             - 이름이 다른 객체라도 가진 속성이 동일하다면 서로 호환 가능한 타입으로 간주함
@@ -998,12 +998,12 @@
         - 유저 인터페이스를 구성하는 요소
         - 컴포넌트 생성
             - ```
-        const App = () => { 
-          return (
-            <SafeAreaView>
-            </SafeAreaView>
-        )} 
-        ```
+              const App = () => { 
+                return (
+                  <SafeAreaView>
+                  </SafeAreaView>
+              )} 
+              ```
             - Props(Properties)를 설정하여 컴포넌트에 전달할 수 있다.
             - JSX 문법
                 - 태그를 열면 반드시 닫아주기 `<Text></Text>`
