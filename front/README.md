@@ -628,7 +628,7 @@
             - readonly Properties
             - Index Signatures
                 - 유형 속성의 모든 이름은 모르지만, type을 알고 있는 경우에 사용할 수 있다.
-                  <img src="../front/type_checkers/typescript/index_signatures_1.png">
+                  <img src="type_checkers/typescript/index_signatures_1.png">
     - Type Manipulation
         - Generics
           ```
@@ -752,12 +752,12 @@
               구축된 새로운 App Router를 도입하였다.
             - Redirecting
                 - Next에서 redirect를 핸들링하는 몇 가지 방법이 있다.
-                  <img src="../front/server_side_rendering/next/redirecting.png">
+                  <img src="server_side_rendering/next/redirecting.png">
             - Route Handlers
             - Middleware
                 - Matching paths
                     - 미들웨어는 프로젝트의 모든 루트에서 호출된다. 실행순서는 다음과 같다.
-                      <img src="../front/server_side_rendering/next/matching_paths.png">
+                      <img src="server_side_rendering/next/matching_paths.png">
                 - NextResponse
                     - NextResponse API는 다음과 같은 일을 수행할 수 있다.
                         - 다른 URL으로 들어오는 요청을 redirect
@@ -792,10 +792,10 @@
                 - props
                     - params
                         - 루트 세그먼트부터 해당 페이지까지의 동적 경로 매개변수를 포함하는 객체이다
-                          <img src="../front/server_side_rendering/next/params.png">
+                          <img src="server_side_rendering/next/params.png">
                     - searchParams
                         - 검색 매개변수를 포함하는 객체
-                          <img src="../front/server_side_rendering/next/search_params.png">
+                          <img src="server_side_rendering/next/search_params.png">
         - next.config.js Options
             - rewrites
                 - Rewrites는 request path를 다른 destination path로 매핑시킬 수 있게 한다.
@@ -829,7 +829,7 @@
             - Core Components
                 - React Native는 컨트롤부터 활동 지시자까지 모든 것을 위한 Core Components들을 가지고 있다.
                 - 다음과 같은 Core Components들을 사용할 것이다.<br>
-                  <img src="../front/mobile_applications/react_native/core_components.png">
+                  <img src="mobile_applications/react_native/core_components.png">
         - Using List Views
             - React Native는 data의 리스트를 표현하기 위해 적합한 component를 제공한다. 일반적으로 FlatList나 SectionList
               중에서 사용할 수 있다.
