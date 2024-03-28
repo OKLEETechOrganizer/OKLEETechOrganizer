@@ -32,14 +32,14 @@
                   <img src="../cs/softwareEngineering/uml/usecase_association.png">
             2. 포함 관계(Include)
                 - 포함 관계는 두 유스케이스 간의 의존성을 나타낸다.
-                  <img src="cs/softwareEngineering/uml/usecase_include.png">
+                  <img src="../cs/softwareEngineering/uml/usecase_include.png">
             3. 확장 관계(Extend)
                 - 확장 관계는 두개의 유스케이스 간의 확장성을 나타낸다.
                 - 하나의 유스케이스가 실행될 때 포함 관계에 있는 유스케이스가 특정 상황에서만 실행된다는 뜻이다.
-                  <img src="cs/softwareEngineering/uml/usecase_extend.png">
+                  <img src="../cs/softwareEngineering/uml/usecase_extend.png">
             4. 일반화 관계(Generalization)
                 - 일반화 관계는 부모 유스케이스와 자식 유스케이스들 간의 상속관계를 나타낸다.
-                  <img src="cs/softwareEngineering/uml/usecase_generalization.png">
+                  <img src="../cs/softwareEngineering/uml/usecase_generalization.png">
                 - 확장 관계와의 차이점
                     - 일반화 관계에 있는 자식 유스케이스들은 부모의 속성들을 물려받기 때문에, 부모 유스케이스가
                       해당된 모든 포함, 확장 관계를 만족해야 한다.
