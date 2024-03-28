@@ -1,17 +1,17 @@
 # FRONT
 
 ## 목차
-0. [INTERNET](#INTERNET)
-1. [HTML](#HTML)
-2. [CSS](#CSS)
-3. [JavaScript](#JavaScript)
-4. [Package Manager](#Package-Manager)
-5. [Framework](#Framework)
-6. [Writing CSS](#Writing-CSS)
-7. [Testing](#Testing)
-8. [Type Checkers](#Type-Checkers)
-9. [Server Side Rendering](#Server-Side-Rendering)
-10. [Mobile Applications](#Mobile-Applications)
+1. [INTERNET](#INTERNET)
+2. [HTML](#HTML)
+3. [CSS](#CSS)
+4. [JavaScript](#JavaScript)
+5. [Package Manager](#Package-Manager)
+6. [Framework](#Framework)
+7. [Writing CSS](#Writing-CSS)
+8. [Testing](#Testing)
+9. [Type Checkers](#Type-Checkers)
+10. [Server Side Rendering](#Server-Side-Rendering)
+11. [Mobile Applications](#Mobile-Applications)
 
 ### INTERNET
 #### HTTP
